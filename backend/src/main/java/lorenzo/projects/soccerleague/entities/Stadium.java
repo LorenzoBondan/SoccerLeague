@@ -1,7 +1,8 @@
 package lorenzo.projects.soccerleague.entities;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -9,13 +10,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_player")
-public class Player implements Serializable{
+@Table(name = "tb_stadium")
+public class Stadium implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -23,24 +23,23 @@ public class Player implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	private String nickname;
-	@Column(columnDefinition = "TIMESTAMP WITHOUT TIMEZONE")
-	private Instant birthDate;
+	private Long capacity;
+	private String location;
 	@Column(columnDefinition = "TEXT")
 	private String imgUrl;
 	
-	@ManyToOne
-	@JoinColumn(name = "team_id")
-	private Team team;
+	@OneToMany(mappedBy = "stadium")
+	private List<Team> teams = new ArrayList<>();
 	
-	public Player() {}
+	
+	public Stadium() {}
 
-	public Player(Long id, String name, String nickname, Instant birthDate, String imgUrl) {
+	public Stadium(Long id, String name, Long capacity, String location, String imgUrl) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.nickname = nickname;
-		this.birthDate = birthDate;
+		this.capacity = capacity;
+		this.location = location;
 		this.imgUrl = imgUrl;
 	}
 
@@ -60,20 +59,20 @@ public class Player implements Serializable{
 		this.name = name;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public Long getCapacity() {
+		return capacity;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setCapacity(Long capacity) {
+		this.capacity = capacity;
 	}
 
-	public Instant getBirthDate() {
-		return birthDate;
+	public String getLocation() {
+		return location;
 	}
 
-	public void setBirthDate(Instant birthDate) {
-		this.birthDate = birthDate;
+	public void setLocation(String location) {
+		this.location = location;
 	}
 
 	public String getImgUrl() {
@@ -97,9 +96,10 @@ public class Player implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Player other = (Player) obj;
+		Stadium other = (Stadium) obj;
 		return Objects.equals(id, other.id);
 	}
 	
 	
+
 }
