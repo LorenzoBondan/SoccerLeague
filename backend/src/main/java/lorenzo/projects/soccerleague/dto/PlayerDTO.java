@@ -1,47 +1,42 @@
-package lorenzo.projects.soccerleague.entities;
+package lorenzo.projects.soccerleague.dto;
 
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import lorenzo.projects.soccerleague.entities.Player;
+import lorenzo.projects.soccerleague.entities.Team;
 
-@Entity
-@Table(name = "tb_player")
-public class Player implements Serializable{
+public class PlayerDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
 	private String nickname;
-	@Column(columnDefinition = "TIMESTAMP WITHOUT TIMEZONE")
 	private Instant birthDate;
-	@Column(columnDefinition = "TEXT")
 	private String imgUrl;
-	
-	@ManyToOne
-	@JoinColumn(name = "team_id")
 	private Team team;
 	
-	public Player() {}
+	public PlayerDTO() {}
 
-	public Player(Long id, String name, String nickname, Instant birthDate, String imgUrl) {
+	public PlayerDTO(Long id, String name, String nickname, Instant birthDate, String imgUrl, Team team) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.nickname = nickname;
 		this.birthDate = birthDate;
 		this.imgUrl = imgUrl;
+		this.team = team;
+	}
+	
+	public PlayerDTO(Player entity) {
+		this.id = entity.getId();
+		this.name = entity.getName();
+		this.nickname = entity.getNickname();
+		this.birthDate = entity.getBirthDate();
+		this.imgUrl = entity.getImgUrl();
+		this.team = entity.getTeam();
 	}
 
 	public Long getId() {
@@ -83,7 +78,7 @@ public class Player implements Serializable{
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}
-	
+
 	public Team getTeam() {
 		return team;
 	}
@@ -105,9 +100,10 @@ public class Player implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Player other = (Player) obj;
+		PlayerDTO other = (PlayerDTO) obj;
 		return Objects.equals(id, other.id);
 	}
 	
 	
+
 }
