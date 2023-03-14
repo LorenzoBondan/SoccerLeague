@@ -7,7 +7,6 @@ import java.util.Objects;
 import java.util.Set;
 
 import lorenzo.projects.soccerleague.entities.Player;
-import lorenzo.projects.soccerleague.entities.Stadium;
 import lorenzo.projects.soccerleague.entities.Team;
 
 public class TeamDTO implements Serializable {
@@ -24,14 +23,14 @@ public class TeamDTO implements Serializable {
 	private Character serie;
 	private String imgUrl;
 	
-	private Stadium stadium;
+	private StadiumDTO stadium;
 	
 	private List<PlayerDTO> players = new ArrayList<>();
 	
 	public TeamDTO() {}
 
 	public TeamDTO(Long id, String name, Long members, Integer internationalCups, Integer continentalCups,
-			Integer nationalCups, Integer nationalLeagues, Character serie, String imgUrl, Stadium stadium) {
+			Integer nationalCups, Integer nationalLeagues, Character serie, String imgUrl, StadiumDTO stadium) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -55,7 +54,8 @@ public class TeamDTO implements Serializable {
 		this.nationalLeagues = entity.getNationalLeagues();
 		this.serie = entity.getSerie();
 		this.imgUrl = entity.getImgUrl();
-		this.stadium = entity.getStadium();
+		
+		this.stadium = new StadiumDTO(entity.getStadium());
 	}
 	
 	public TeamDTO(Team entity, Set<Player> players) {
@@ -135,11 +135,11 @@ public class TeamDTO implements Serializable {
 		this.imgUrl = imgUrl;
 	}
 
-	public Stadium getStadium() {
+	public StadiumDTO getStadium() {
 		return stadium;
 	}
 
-	public void setStadium(Stadium stadium) {
+	public void setStadium(StadiumDTO stadium) {
 		this.stadium = stadium;
 	}
 

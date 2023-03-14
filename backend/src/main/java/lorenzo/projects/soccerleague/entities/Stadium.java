@@ -82,6 +82,11 @@ public class Stadium implements Serializable{
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}
+	
+
+	public List<Team> getTeams() {
+		return teams;
+	}
 
 	@Override
 	public int hashCode() {
