@@ -2,6 +2,8 @@ package lorenzo.projects.soccerleague.services;
 
 import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,5 +32,24 @@ public class TeamService {
 		Optional<Team> obj = repository.findById(id);
 		Team entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found."));
 		return new TeamDTO(entity);
+	}
+	
+	@Transactional
+	public TeamDTO update(Long id, TeamDTO dto) {
+		try {
+			Team entity = repository.getOne(id);
+			
+			entity.setInternationalCups(dto.getContinentalCups());
+			entity.setContinentalCups(dto.getContinentalCups());
+			entity.setNationalCups(dto.getNationalCups());
+			entity.setNationalLeagues(dto.getNationalLeagues());
+			entity.setMembers(dto.getMembers());
+			entity.setSerie(dto.getSerie());
+			
+			entity = repository.save(entity);
+			return new TeamDTO(entity);
+		} catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException("Id not found " + id);
+		}
 	}
 }
