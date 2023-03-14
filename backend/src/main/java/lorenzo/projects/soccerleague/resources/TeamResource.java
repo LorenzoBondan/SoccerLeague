@@ -24,4 +24,10 @@ public class TeamResource {
 		Page<TeamDTO> list = service.findTeamBySerie(pageable, serie);	
 		return ResponseEntity.ok().body(list);
 	}
+	
+	@GetMapping(value = "/team/{id}")
+	public ResponseEntity<TeamDTO> findById(@PathVariable Long id) {
+		TeamDTO dto = service.findById(id);	
+		return ResponseEntity.ok().body(dto);
+	}
 }
