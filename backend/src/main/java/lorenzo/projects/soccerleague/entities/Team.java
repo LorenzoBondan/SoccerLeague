@@ -15,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lorenzo.projects.soccerleague.dto.TeamDTO;
+
 @Entity
 @Table(name = "tb_team")
 public class Team implements Serializable{
@@ -41,7 +43,10 @@ public class Team implements Serializable{
 	@OneToMany(mappedBy = "team")
 	private List<Player> players = new ArrayList<>();
 	
+	
 	public Team() {}
+	
+	public Team(TeamDTO dto) {}
 
 
 	public Team(Long id, String name, Long members, Integer internationalCups, Integer continentalCups,
@@ -158,6 +163,7 @@ public class Team implements Serializable{
 	public void setStadium(Stadium stadium) {
 		this.stadium = stadium;
 	}
+	
 
 
 	public List<Player> getPlayers() {

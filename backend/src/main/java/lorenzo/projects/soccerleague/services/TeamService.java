@@ -24,7 +24,7 @@ public class TeamService {
 	@Transactional(readOnly = true)
 	public Page<TeamDTO> findTeamBySerie(Pageable pageable, Character serie) {
 		Page<Team> list = repository.findTeamBySerie(pageable, serie);
-		return list.map(x -> new TeamDTO(x));
+		return list.map(x -> new TeamDTO(x, x.getPlayers()));
 	}
 	
 	@Transactional(readOnly = true)

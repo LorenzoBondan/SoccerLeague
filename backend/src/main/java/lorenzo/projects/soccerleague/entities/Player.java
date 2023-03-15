@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name = "tb_player")
 public class Player implements Serializable{
@@ -24,7 +25,7 @@ public class Player implements Serializable{
 	private Long id;
 	private String name;
 	private String nickname;
-	@Column(columnDefinition = "TIMESTAMP WITHOUT TIMEZONE")
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
 	private Instant birthDate;
 	@Column(columnDefinition = "TEXT")
 	private String imgUrl;

@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 import lorenzo.projects.soccerleague.entities.Player;
 import lorenzo.projects.soccerleague.entities.Team;
@@ -24,6 +23,7 @@ public class TeamDTO implements Serializable {
 	private String imgUrl;
 	
 	private StadiumDTO stadium;
+	
 	
 	private List<PlayerDTO> players = new ArrayList<>();
 	
@@ -58,9 +58,9 @@ public class TeamDTO implements Serializable {
 		this.stadium = new StadiumDTO(entity.getStadium());
 	}
 	
-	public TeamDTO(Team entity, Set<Player> players) {
+	public TeamDTO(Team entity, List<Player> list) {
 		this(entity);
-		players.forEach(p -> this.players.add(new PlayerDTO(p)));
+		list.forEach(p -> this.players.add(new PlayerDTO(p)));
 	}
 
 	public Long getId() {
@@ -142,6 +142,7 @@ public class TeamDTO implements Serializable {
 	public void setStadium(StadiumDTO stadium) {
 		this.stadium = stadium;
 	}
+	
 
 	public List<PlayerDTO> getPlayers() {
 		return players;

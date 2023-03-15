@@ -5,7 +5,6 @@ import java.time.Instant;
 import java.util.Objects;
 
 import lorenzo.projects.soccerleague.entities.Player;
-import lorenzo.projects.soccerleague.entities.Team;
 
 public class PlayerDTO implements Serializable{
 
@@ -16,18 +15,18 @@ public class PlayerDTO implements Serializable{
 	private String nickname;
 	private Instant birthDate;
 	private String imgUrl;
-	private Team team;
+	private Long teamId;
 	
 	public PlayerDTO() {}
 
-	public PlayerDTO(Long id, String name, String nickname, Instant birthDate, String imgUrl, Team team) {
+	public PlayerDTO(Long id, String name, String nickname, Instant birthDate, String imgUrl, Long teamId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.nickname = nickname;
 		this.birthDate = birthDate;
 		this.imgUrl = imgUrl;
-		this.team = team;
+		this.teamId = teamId;
 	}
 	
 	public PlayerDTO(Player entity) {
@@ -36,7 +35,7 @@ public class PlayerDTO implements Serializable{
 		this.nickname = entity.getNickname();
 		this.birthDate = entity.getBirthDate();
 		this.imgUrl = entity.getImgUrl();
-		this.team = entity.getTeam();
+		this.teamId = entity.getTeam().getId();
 	}
 
 	public Long getId() {
@@ -79,12 +78,12 @@ public class PlayerDTO implements Serializable{
 		this.imgUrl = imgUrl;
 	}
 
-	public Team getTeam() {
-		return team;
+	public Long getTeamId() {
+		return teamId;
 	}
 
-	public void setTeam(Team team) {
-		this.team = team;
+	public void setTeamId(Long teamId) {
+		this.teamId = teamId;
 	}
 
 	@Override

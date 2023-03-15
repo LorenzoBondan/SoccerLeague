@@ -11,7 +11,7 @@ import lorenzo.projects.soccerleague.entities.Team;
 @Repository
 public interface TeamRepository extends JpaRepository<Team,Long>{
 	
-	@Query(nativeQuery = true, value = "SELECT * from tb_team WHERE serie = :serie")
+	@Query(nativeQuery = true, value = "SELECT * from tb_team WHERE serie = :serie ORDER BY name ASC")
 	Page<Team> findTeamBySerie(Pageable pageable, Character serie);
 
 }
