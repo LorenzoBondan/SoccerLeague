@@ -18,18 +18,22 @@ public class StadiumDTO implements Serializable{
 	private Long capacity;
 	private String location;
 	private String imgUrl;
+	private Double latitude;
+	private Double longitude;
 	
 	private List<TeamDTO> teams = new ArrayList<>();
 	
 	public StadiumDTO() {}
 
-	public StadiumDTO(Long id, String name, Long capacity, String location, String imgUrl) {
+	public StadiumDTO(Long id, String name, Long capacity, String location, String imgUrl, Double latitude, Double longitude) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.capacity = capacity;
 		this.location = location;
 		this.imgUrl = imgUrl;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 	
 	public StadiumDTO(Stadium entity) {
@@ -38,6 +42,8 @@ public class StadiumDTO implements Serializable{
 		this.capacity = entity.getCapacity();
 		this.location = entity.getLocation();
 		this.imgUrl = entity.getImgUrl();
+		this.latitude = entity.getLatitude();
+		this.longitude = entity.getLongitude();
 	}
 	
 	public StadiumDTO(Stadium entity, List<Team> list) {
@@ -83,6 +89,22 @@ public class StadiumDTO implements Serializable{
 
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
+	}
+
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	public Double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
 	}
 
 	public List<TeamDTO> getTeams() {

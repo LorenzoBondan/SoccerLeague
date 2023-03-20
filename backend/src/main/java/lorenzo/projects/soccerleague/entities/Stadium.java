@@ -27,6 +27,8 @@ public class Stadium implements Serializable{
 	private String location;
 	@Column(columnDefinition = "TEXT")
 	private String imgUrl;
+	private Double latitude;
+	private Double longitude;
 	
 	@OneToMany(mappedBy = "stadium")
 	private List<Team> teams = new ArrayList<>();
@@ -34,13 +36,15 @@ public class Stadium implements Serializable{
 	
 	public Stadium() {}
 
-	public Stadium(Long id, String name, Long capacity, String location, String imgUrl) {
+	public Stadium(Long id, String name, Long capacity, String location, String imgUrl, Double latitude, Double longitude) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.capacity = capacity;
 		this.location = location;
 		this.imgUrl = imgUrl;
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 
 	public Long getId() {
@@ -83,6 +87,21 @@ public class Stadium implements Serializable{
 		this.imgUrl = imgUrl;
 	}
 	
+	public Double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(Double latitude) {
+		this.latitude = latitude;
+	}
+
+	public Double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(Double longitude) {
+		this.longitude = longitude;
+	}
 
 	public List<Team> getTeams() {
 		return teams;
