@@ -1,0 +1,52 @@
+.main-nav{
+    padding : 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-logo-text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-logo-text h4 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 0;
+    color: #111111;
+}
+
+.nav-logo-text h4:hover {
+    color: #FFF;
+}
+
+.navbar-brand img{
+    height: 50px;
+}
+
+.main-menu {
+    display: flex;
+    font-size: 20px;
+    width: 380px; /* tamanho do início do home até o final do admin */
+    justify-content: space-between;
+}
+
+.main-menu a, .main-menu i {
+    color:#111111;
+}
+
+.main-menu a:hover, .main-menu svg:hover{
+    color: #FFF;
+}
+
+.main-menu a.active {
+    color: #3175A3;
+    font-weight: bold;
+}
+
+.active svg{
+    color:#3175A3;
+}
