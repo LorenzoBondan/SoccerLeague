@@ -1,4 +1,4 @@
-import logoBrasileirao from 'assets/images/logo-brasileirao.png';
+
 import logoCopaDoBrasil from 'assets/images/copa-do-brasil.png';
 import logoLibertadores from 'assets/images/libertadores.png';
 import logoMundial from 'assets/images/mundial.png';
@@ -15,7 +15,7 @@ const Info = () => {
             <div className='odd'>
                 <div className='info-card base-card'>
                     <div className='info-image-zone'>
-                        <img src={logoBrasileirao} alt="" />
+                        <img src="https://logospng.org/download/brasileirao-serie-a/logo-brasileirao-2048.png" alt="" />
                     </div>
                     <div className='info-content-zone'>
                         <h3><i style={{marginRight:"10px"}}><GiBrazil/></i>Brazilian League</h3>

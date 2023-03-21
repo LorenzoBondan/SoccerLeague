@@ -14,7 +14,7 @@
 
 .nav-logo-text h4 {
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.3rem;
     margin-bottom: 0;
     color: #111111;
 }
@@ -52,4 +52,10 @@
 
 .active svg{
     color:#3175A3;
+}
+
+@media(min-width:576px){
+    .nav-logo-text h4 {
+        font-size: 2rem;
+    }
 }
