@@ -1,0 +1,25 @@
+.team-card-container{
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    background-color: #161616;
+    width: 575px;
+    margin-bottom: 50px;
+}
+
+.team-card-image-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-card-image-container img{
+    height: 300px;
+}
+
+.team-card-cups{
+    flex-wrap: wrap;
+}

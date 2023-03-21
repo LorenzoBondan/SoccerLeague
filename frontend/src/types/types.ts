@@ -22,6 +22,7 @@ export type Stadium = {
 }
 
 export type Team = {
+    id: number;
     name: string;
     members: number;
     internationalCups: number;
@@ -34,6 +35,7 @@ export type Team = {
 }
 
 export type Player = {
+    id: number;
     name: string;
     nickname: string;
     birthDate: string;

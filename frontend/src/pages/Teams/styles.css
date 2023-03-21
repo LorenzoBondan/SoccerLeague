@@ -1,0 +1,4 @@
+.team-card-cups{
+    display: flex;
+    flex-direction: row;
+}

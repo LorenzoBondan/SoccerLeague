@@ -20,14 +20,13 @@ const StadiumCard = ({stadium} : Props) => {
                 <p><strong style={{marginRight:"5px"}}>Location: </strong>{stadium.location}</p>
 
                 <div className="stadium-card-teams">
-                    <h3 style={{marginTop:"35px"}}>Teams:</h3>
+                    <h3 style={{marginTop:"30px"}}>Teams:</h3>
                     {stadium.teams.map(team => (
                         <img src={team.imgUrl} alt="" />
                     ))}
                 </div>
             </div>
 
-            
         </div>
     );
 }
