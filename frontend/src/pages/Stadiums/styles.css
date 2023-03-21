@@ -1,0 +1,12 @@
+.stadiums-container{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1550px;
+}
+
+.stadiums-container h1 {
+    margin-bottom: 20px;
+}

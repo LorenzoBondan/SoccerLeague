@@ -1,0 +1,45 @@
+.stadium-card-container{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+
+    border-radius: 20px;
+    border: 3px solid white;
+    box-shadow: 5px 5px 5px #96FC58;
+    background-color: #222222;
+    width: 700px;
+    margin-bottom: 50px;
+}
+
+.stadium-card-container:hover{
+    transition: 0.2s ease-in-out;
+    transform: scale(1.01);
+}
+
+.stadium-card-image-container img{
+    height: 250px;
+    width: 300px;
+    border-radius: 20px;
+    border: 2px solid #96FC58;
+}
+
+.stadium-card-content-container{
+    margin-left: 30px;
+}
+
+.stadium-card-content-container h3{
+    color: #96FC58;
+    font-size: 25px;
+    text-shadow: 5px 5px 5px black;
+    margin-bottom: 10px;
+}
+
+.stadium-card-content-container p {
+    color: white;
+    text-shadow: 5px 5px 5px black;
+    margin-bottom: 5px;
+}
+
+.stadium-card-teams img{
+    height: 80px;
+}
