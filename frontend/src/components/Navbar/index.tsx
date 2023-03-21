@@ -34,7 +34,7 @@ const Navbar = () => {
             </button>
 
             <div className="collapse navbar-collapse" id="soccerleague-navbar">
-                <ul className='navbar-nav offset-md-2 main-menu'>
+                <ul className='navbar-nav offset-md-8 main-menu'>
                     <li>
                         <NavLink to="/teams" activeClassName='active' exact>
                             <i style={{
@@ -42,7 +42,7 @@ const Navbar = () => {
                             }}>
                             <IoShirtSharp/>
                             </i>
-                            TEAMS
+                            Teams
                         </NavLink>
                     </li>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
                             }}>
                             <MdStadium/>
                             </i>
-                            STADIUMS
+                            Stadiums
                         </NavLink>
                     </li>
 
@@ -64,7 +64,7 @@ const Navbar = () => {
                             }}>
                             <FaUsers/>
                             </i>
-                            PLAYERS
+                            Players
                         </NavLink>
                     </li>
 

@@ -1,0 +1,76 @@
+.home-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 780px;
+    background-image: url('assets/images/taca-background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 15px silver;
+    margin-bottom: 50px;
+}
+
+.home-content-container h1{
+    font-size: 78px;
+    text-shadow: 5px 5px 5px black;
+    letter-spacing: 0.3rem;
+    width: 610px;
+    margin-bottom: 15px;
+}
+
+.home-content-container img{
+    height: 95px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.home-content-container p{
+    font-size: 20px;
+    font-weight: 400;
+    text-shadow: 5px 5px 5px black;
+    width: 700px;
+    font-family: 'Free Sans';
+    margin-bottom: 70px;
+}
+
+.home-button-zone{
+    display: flex;
+    flex:1;
+    justify-content: center;
+}
+
+.home-content-container button{
+    width: 300px;
+    height: 50px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 1px black;
+}
+
+.home-content-container button:hover{
+    transition: 0.4s ease-in-out;
+    transform: scale(1.1);
+}
+
+.home-content-container button span{
+    -webkit-text-stroke: 0.75px black;
+   color: white;   
+   letter-spacing: 0.12rem; 
+   font-size: 25px;
+   font-family: unset;
+}
+
+.home-image-container img{
+    height: 400px; 
+}
+
+.home-image-container img:hover{
+    transition: 0.4s ease-in-out;
+    transform: scale(1.1);
+}
+
+
+
+
+
