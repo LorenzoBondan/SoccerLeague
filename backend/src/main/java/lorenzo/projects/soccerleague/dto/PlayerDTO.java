@@ -5,6 +5,7 @@ import java.time.Instant;
 import java.util.Objects;
 
 import lorenzo.projects.soccerleague.entities.Player;
+import lorenzo.projects.soccerleague.entities.enums.PositionEnum;
 
 public class PlayerDTO implements Serializable{
 
@@ -16,16 +17,18 @@ public class PlayerDTO implements Serializable{
 	private Instant birthDate;
 	private String imgUrl;
 	private Long teamId;
+	private PositionEnum position;
 	
 	public PlayerDTO() {}
 
-	public PlayerDTO(Long id, String name, String nickname, Instant birthDate, String imgUrl, Long teamId) {
+	public PlayerDTO(Long id, String name, String nickname, Instant birthDate, String imgUrl, PositionEnum position, Long teamId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.nickname = nickname;
 		this.birthDate = birthDate;
 		this.imgUrl = imgUrl;
+		this.position = position;
 		this.teamId = teamId;
 	}
 	
@@ -35,6 +38,7 @@ public class PlayerDTO implements Serializable{
 		this.nickname = entity.getNickname();
 		this.birthDate = entity.getBirthDate();
 		this.imgUrl = entity.getImgUrl();
+		this.position = entity.getPosition();
 		this.teamId = entity.getTeam().getId();
 	}
 
@@ -76,6 +80,15 @@ public class PlayerDTO implements Serializable{
 
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
+	}
+	
+
+	public PositionEnum getPosition() {
+		return position;
+	}
+
+	public void setPosition(PositionEnum position) {
+		this.position = position;
 	}
 
 	public Long getTeamId() {

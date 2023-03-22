@@ -69,6 +69,7 @@ public class PlayerService {
 		entity.setNickname(dto.getNickname());
 		entity.setBirthDate(dto.getBirthDate());
 		entity.setImgUrl(dto.getImgUrl());
+		entity.setPosition(dto.getPosition());
 		entity.setTeam(teamRepository.getOne(dto.getTeamId()));
 	}
 }

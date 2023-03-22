@@ -13,6 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import lorenzo.projects.soccerleague.entities.enums.PositionEnum;
+
 
 @Entity
 @Table(name = "tb_player")
@@ -30,19 +32,22 @@ public class Player implements Serializable{
 	@Column(columnDefinition = "TEXT")
 	private String imgUrl;
 	
+	private PositionEnum position;
+	
 	@ManyToOne
 	@JoinColumn(name = "team_id")
 	private Team team;
 	
 	public Player() {}
 
-	public Player(Long id, String name, String nickname, Instant birthDate, String imgUrl) {
+	public Player(Long id, String name, String nickname, Instant birthDate, String imgUrl, PositionEnum position) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.nickname = nickname;
 		this.birthDate = birthDate;
 		this.imgUrl = imgUrl;
+		this.position = position;
 	}
 
 	public Long getId() {
@@ -85,6 +90,15 @@ public class Player implements Serializable{
 		this.imgUrl = imgUrl;
 	}
 	
+	
+	public PositionEnum getPosition() {
+		return position;
+	}
+
+	public void setPosition(PositionEnum position) {
+		this.position = position;
+	}
+
 	public Team getTeam() {
 		return team;
 	}
