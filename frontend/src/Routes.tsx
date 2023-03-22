@@ -21,7 +21,7 @@ const Routes = () => {
                 </Route>
 
                 <Route path="/teams" exact>
-                    <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+                    <div style={{display:"flex", alignItems:"center", justifyContent:"center", padding:"20px"}}>
                         <Teams/>
                     </div>
                 </Route>

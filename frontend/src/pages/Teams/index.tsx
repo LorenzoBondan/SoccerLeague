@@ -36,7 +36,7 @@ const Teams = () => {
                 {page?.content
                   .sort((a,b) => a.name > b.name ? 1 : -1)
                   .map(team => (
-                    <div className="col-sm-6 col-lg-6 col-xl-6 teams-column" key={team.id}>
+                    <div className="col-sm-6 col-lg-6 col-xl-4 teams-column" key={team.id}>
                       <Link to={`/teams/${team.id}`}>
                         <TeamCard team={team}/>
                       </Link>
