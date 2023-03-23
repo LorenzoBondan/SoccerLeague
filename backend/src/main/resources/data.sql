@@ -53,7 +53,7 @@ INSERT INTO tb_team (name, members, international_Cups, continental_Cups, nation
 INSERT INTO tb_team (name, members, international_Cups, continental_Cups, national_Cups, national_Leagues, serie, img_Url, stadium_id) VALUES ('Vasco', 54877, 0, 1, 1, 4, 'a', 'https://logodetimes.com/times/vasco-da-gama/logo-vasco-da-gama-512.png', 8);
 
 
-INSERT INTO tb_player (name, nickname, birth_Date, img_Url, team_id) VALUES ('João da Silva', 'João', TIMESTAMP WITH TIME ZONE '1999-08-11', 'https://img.a.transfermarkt.technology/portrait/header/44352-1668156555.jpg?lm=1', 1);
-INSERT INTO tb_player (name, nickname, birth_Date, img_Url, team_id) VALUES ('Lucas Silva', 'Lucas', TIMESTAMP WITH TIME ZONE '1999-08-11', 'https://img.a.transfermarkt.technology/portrait/header/44352-1668156555.jpg?lm=1', 2);
-INSERT INTO tb_player (name, nickname, birth_Date, img_Url, team_id) VALUES ('Marcos Alexandre', 'Marcos', TIMESTAMP WITH TIME ZONE '1999-08-11', 'https://img.a.transfermarkt.technology/portrait/header/44352-1668156555.jpg?lm=1', 3);
-INSERT INTO tb_player (name, nickname, birth_Date, img_Url, team_id) VALUES ('Emanuel Salvador', 'Manu', TIMESTAMP WITH TIME ZONE '1999-08-11', 'https://img.a.transfermarkt.technology/portrait/header/44352-1668156555.jpg?lm=1', 1);
+INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('João da Silva', 'João', TIMESTAMP WITH TIME ZONE '1999-08-11', 'https://img.a.transfermarkt.technology/portrait/header/44352-1668156555.jpg?lm=1', 0, 1);
+INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('Lucas Silva', 'Lucas', TIMESTAMP WITH TIME ZONE '1999-08-11', 'https://img.a.transfermarkt.technology/portrait/header/44352-1668156555.jpg?lm=1', 1, 2);
+INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('Marcos Alexandre', 'Marcos', TIMESTAMP WITH TIME ZONE '1999-08-11', 'https://img.a.transfermarkt.technology/portrait/header/44352-1668156555.jpg?lm=1', 2, 3);
+INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('Emanuel Salvador', 'Manu', TIMESTAMP WITH TIME ZONE '1999-08-11', 'https://img.a.transfermarkt.technology/portrait/header/44352-1668156555.jpg?lm=1', 3, 1); 

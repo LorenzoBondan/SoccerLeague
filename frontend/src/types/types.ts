@@ -40,6 +40,15 @@ export type Player = {
     nickname: string;
     birthDate: string;
     imgUrl: string;
-    team: Team;
+    teamId: number;
+    position : string; /* string because I handle it in PlayerCard */
 }
 
+/*
+export enum Position {
+    GOALKEEPER,
+    DEFENDER,
+    MIDDLE_FIELD,
+    FORWARD
+}
+*/

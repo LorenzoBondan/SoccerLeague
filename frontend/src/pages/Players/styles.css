@@ -1,0 +1,19 @@
+.players-container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.players-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.players-container h1{
+    margin-bottom: 50px;
+    text-shadow: 5px 5px 5px black;
+}

@@ -1,6 +1,7 @@
 import Navbar from "components/Navbar";
 import Home from "pages/Home";
 import Info from "pages/Info";
+import Players from "pages/Players";
 import Stadiums from "pages/Stadiums";
 import Teams from "pages/Teams";
 import { Route, Router, Switch } from "react-router-dom";
@@ -29,6 +30,12 @@ const Routes = () => {
                 <Route path="/stadiums" exact>
                     <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
                         <Stadiums/>
+                    </div>
+                </Route>
+
+                <Route path="/players" exact>
+                    <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+                        <Players/>
                     </div>
                 </Route>
 
