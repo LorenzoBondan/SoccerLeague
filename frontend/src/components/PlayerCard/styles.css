@@ -36,8 +36,12 @@
     position: absolute;
     display: flex;
     flex: 1;
-    margin-top: 140px;
-    margin-left: 100px;
+    margin-top: 140px !important;
+    margin-left: 100px !important;
+}
+
+.player-card-team-image:hover{
+    transform: scale(1.2);
 }
 
 .player-card-content-container h3{
@@ -47,8 +51,7 @@
 }
 
 .player-card-content-container p{
-    font-family: 'Free Sans';
-    font-weight: 700;
+    letter-spacing: 0.03rem;
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
 }
 

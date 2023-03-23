@@ -32,6 +32,7 @@ export type Team = {
     serie: string;
     imgUrl: string;
     stadium: Stadium;
+    players: Player[];
 }
 
 export type Player = {

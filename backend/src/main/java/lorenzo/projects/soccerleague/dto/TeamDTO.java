@@ -58,9 +58,9 @@ public class TeamDTO implements Serializable {
 		this.stadium = new StadiumDTO(entity.getStadium());
 	}
 	
-	public TeamDTO(Team entity, List<Player> list) {
+	public TeamDTO(Team entity, List<Player> players) {
 		this(entity);
-		list.forEach(p -> this.players.add(new PlayerDTO(p)));
+		players.forEach(p -> this.players.add(new PlayerDTO(p)));
 	}
 
 	public Long getId() {

@@ -31,7 +31,7 @@ public class TeamService {
 	public TeamDTO findById(Long id) {
 		Optional<Team> obj = repository.findById(id);
 		Team entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found."));
-		return new TeamDTO(entity);
+		return new TeamDTO(entity, entity.getPlayers());
 	}
 	
 	@Transactional

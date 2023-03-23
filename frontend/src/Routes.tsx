@@ -3,6 +3,7 @@ import Home from "pages/Home";
 import Info from "pages/Info";
 import Players from "pages/Players";
 import Stadiums from "pages/Stadiums";
+import TeamDetails from "pages/TeamDetails";
 import Teams from "pages/Teams";
 import { Route, Router, Switch } from "react-router-dom";
 import history from "util/history";
@@ -24,6 +25,12 @@ const Routes = () => {
                 <Route path="/teams" exact>
                     <div style={{display:"flex", alignItems:"center", justifyContent:"center", padding:"20px"}}>
                         <Teams/>
+                    </div>
+                </Route>
+
+                <Route path="/teams/team/:teamId">
+                    <div style={{display:"flex", alignItems:"center", justifyContent:"center", padding:"20px"}}>
+                        <TeamDetails/>
                     </div>
                 </Route>
 

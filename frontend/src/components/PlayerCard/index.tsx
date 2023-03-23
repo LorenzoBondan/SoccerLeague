@@ -1,6 +1,7 @@
 
 import { AxiosRequestConfig } from 'axios';
 import { useCallback, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Player, Team } from 'types/types';
 import { requestBackend } from 'util/requests';
 import './styles.css';
@@ -56,7 +57,9 @@ const PlayerCard = ({player} : Props) => {
         <div className='player-card-container'>
             <div className='player-card-image-container'>
                 <img className='player-card-player-image' src={player.imgUrl} alt="" />
-                <img className='player-card-team-image' src={team?.imgUrl} alt="" />
+                <Link to={`/teams/team/${player.teamId}`} className='player-card-team-image'>
+                    <img src={team?.imgUrl} alt="" />
+                </Link>
             </div>
             <div className='player-card-content-container'>
                 <>

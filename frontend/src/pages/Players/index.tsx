@@ -13,7 +13,11 @@ const Players = () => {
     const getPlayers = useCallback(() => {
         const params : AxiosRequestConfig = {
           method:"GET",
-          url: "/players"
+          url: "/players",
+          params: {
+            page: 0,
+            size: 300
+          },
         }
     
         requestBackend(params) 
@@ -34,9 +38,9 @@ const Players = () => {
 
             <div className="row">
                 {page?.content
-                  .sort((a,b) => a.position > b.position ? 1 : -1)
+                  .sort((a,b) => a.name > b.name ? 1 : -1)
                   .map(player => (
-                    <div className="col-sm-6 col-lg-4 col-xl-3 players-column" key={player.id}>
+                    <div className="col-sm-6 col-lg-4 col-xl-2 players-column" key={player.id}>
                         <PlayerCard player={player}/>
                     </div>
                     )

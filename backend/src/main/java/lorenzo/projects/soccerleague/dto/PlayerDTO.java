@@ -98,6 +98,7 @@ public class PlayerDTO implements Serializable{
 	public void setTeamId(Long teamId) {
 		this.teamId = teamId;
 	}
+	
 
 	@Override
 	public int hashCode() {
