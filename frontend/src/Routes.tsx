@@ -1,3 +1,4 @@
+import Footer from "components/Footer";
 import Navbar from "components/Navbar";
 import Home from "pages/Home";
 import Info from "pages/Info";
@@ -47,6 +48,8 @@ const Routes = () => {
                 </Route>
 
             </Switch>
+
+            <Footer/>
         </Router>
     );
 }
