@@ -31,7 +31,7 @@ INSERT INTO tb_stadium (name, capacity, location, img_Url, latitude, longitude) 
 INSERT INTO tb_stadium (name, capacity, location, img_Url, latitude, longitude) VALUES ('Vila Belmiro', 16068, 'Santos - SP', 'https://media.santosfc.com.br/wp-content/uploads/2022/08/Foto-tu.drone-4-1.jpeg', -23.9510271, -46.3393382);
 
 
-INSERT INTO tb_team (name, members, international_Cups, continental_Cups, national_Cups, national_Leagues, serie, img_Url, stadium_id) VALUES ('Grêmio', 85216, 1, 3, 5, 2, 'a', 'https://logodetimes.com/times/gremio/logo-gremio-1024.png', 1);
+INSERT INTO tb_team (name, members, international_Cups, continental_Cups, national_Cups, national_Leagues, serie, img_Url, stadium_id) VALUES ('Grêmio', 85216, 1, 3, 5, 2, 'a', 'https://logodetimes.com/times/gremio/logo-gremio-512.png', 1);
 INSERT INTO tb_team (name, members, international_Cups, continental_Cups, national_Cups, national_Leagues, serie, img_Url, stadium_id) VALUES ('Internacional', 76156, 1, 2, 1, 3, 'a', 'https://logodetimes.com/times/internacional/logo-internacional-512.png', 2);
 INSERT INTO tb_team (name, members, international_Cups, continental_Cups, national_Cups, national_Leagues, serie, img_Url, stadium_id) VALUES ('Palmeiras', 136670, 0, 3, 4, 11, 'a', 'https://logodetimes.com/times/palmeiras/logo-palmeiras-512.png', 3);
 INSERT INTO tb_team (name, members, international_Cups, continental_Cups, national_Cups, national_Leagues, serie, img_Url, stadium_id) VALUES ('Atlético-MG', 84501, 0, 1, 2, 2, 'a', 'https://logodetimes.com/times/atletico-mineiro/logo-atletico-mineiro-512.png', 12);

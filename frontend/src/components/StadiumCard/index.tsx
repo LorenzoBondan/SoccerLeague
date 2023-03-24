@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Stadium } from "types/types";
 
 import './styles.css';
@@ -22,11 +23,12 @@ const StadiumCard = ({stadium} : Props) => {
                 <div className="stadium-card-teams">
                     <h3 style={{marginTop:"30px"}}>Teams:</h3>
                     {stadium.teams.map(team => (
-                        <img src={team.imgUrl} alt="" />
+                        <Link to={`/teams/team/${team.id}`} key={team.id}>
+                            <img src={team.imgUrl} alt="" />
+                        </Link>
                     ))}
                 </div>
             </div>
-
         </div>
     );
 }

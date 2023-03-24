@@ -5,13 +5,111 @@
     justify-content: center;
 }
 
-.team-details-players{
+.team-details-container h1, .team-details-container h2{
+    color: #96FC58;
+    text-shadow: 5px 5px 5px black;
+}
+
+.team-details-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding: 30px 40px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(360deg, #96FC58 -100%, #161616 20%);
+    margin-bottom: 50px;
+    width: 1200px;
+}
+
+.team-details-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-details-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between !important;
+}
+
+.team-details-stadium{
     padding: 40px 80px;
-    border: 1px solid white;
     border-radius: 50px;
     width: 50%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(360deg, #96FC58 -100%, #161616 50%);
+    margin-bottom: 50px;
+    width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.team-details-stadium-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.team-details-stadium-image h3{
+    color: #96FC58;
+    margin-bottom: 25px;
+    text-shadow: 5px 5px 5px black;
+}
+
+.team-details-stadium-image p{
+    text-shadow: 5px 5px 5px black;
+}
+
+.team-details-stadium-image img{
+    margin-top: 15px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    border: 1px solid #96FC58;
+    margin-bottom: 10px;
+}
+
+.team-details-stadium-image img:hover{
+    box-shadow: 5px 5px 5px #96FC58;
+    transform: scale(1.01);
+    transition: 0.2s ease-in-out;
+}
+
+.team-details-stadium-content p {
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.team-details-players{
+    padding: 40px 80px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    background-color: #161616;
+    width: 1200px;
 }
 
 .team-details-player-card{
     transform: scale(0.8);
+}
+
+.team-card-cups-details{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+.team-card-cups-details p{
+    margin-bottom: 0;
+    margin-right: 5px;
+    text-shadow: 5px 5px 5px black;
 }
