@@ -6,7 +6,6 @@ import tacaBrasileirao from 'assets/images/taca-brasileirao.png';
 import tacaCopaBrasil from 'assets/images/taca-copa-brasil.png';
 
 import './styles.css';
-import { Link } from 'react-router-dom';
 
 type Props = {
     team: Team;
@@ -58,9 +57,7 @@ const TeamCard = ({team} : Props) => {
                 </>
             </div>
             <div className='team-card-stadium-container'>
-                <Link to={`/stadium/${team.stadium.id}`}>
-                    <h4>Stadium: {team.stadium.name}</h4>
-                </Link>
+                <h4>Stadium: {team.stadium.name}</h4>
             </div>
         </div>
     );

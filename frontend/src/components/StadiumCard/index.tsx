@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { Stadium } from "types/types";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
 
 import './styles.css';
 
@@ -8,6 +10,12 @@ type Props = {
 }
 
 const StadiumCard = ({stadium} : Props) => {
+
+    const renderTooltipTeamName = (teamName : string) => (
+        <Tooltip>
+          {teamName}
+        </Tooltip>
+    );
 
     return(
         <div className="stadium-card-container">
@@ -22,10 +30,17 @@ const StadiumCard = ({stadium} : Props) => {
 
                 <div className="stadium-card-teams">
                     <h3 style={{marginTop:"30px"}}>Teams:</h3>
+
                     {stadium.teams.map(team => (
-                        <Link to={`/teams/team/${team.id}`} key={team.id}>
-                            <img src={team.imgUrl} alt="" />
-                        </Link>
+                        <OverlayTrigger
+                        placement="right"
+                        delay={{ show: 250, hide: 400 }}
+                        overlay={renderTooltipTeamName(team.name)}
+                        >
+                            <Link to={`/teams/team/${team.id}`} key={team.id}>
+                                <img src={team.imgUrl} alt="" />
+                            </Link>
+                        </OverlayTrigger>
                     ))}
                 </div>
             </div>
