@@ -167,6 +167,9 @@ public class Team implements Serializable{
 	}
 	
 
+	public List<Match> getMatches() {
+		return matches;
+	}
 
 	public List<Player> getPlayers() {
 		return players;

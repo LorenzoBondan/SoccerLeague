@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import lorenzo.projects.soccerleague.entities.Match;
 import lorenzo.projects.soccerleague.entities.Player;
 import lorenzo.projects.soccerleague.entities.Team;
 
@@ -26,6 +27,8 @@ public class TeamDTO implements Serializable {
 	
 	
 	private List<PlayerDTO> players = new ArrayList<>();
+	
+	private List<MatchDTO> matches = new ArrayList<>();
 	
 	public TeamDTO() {}
 
@@ -58,9 +61,10 @@ public class TeamDTO implements Serializable {
 		this.stadium = new StadiumDTO(entity.getStadium());
 	}
 	
-	public TeamDTO(Team entity, List<Player> players) {
+	public TeamDTO(Team entity, List<Player> players, List<Match> matches) {
 		this(entity);
 		players.forEach(p -> this.players.add(new PlayerDTO(p)));
+		matches.forEach(m -> this.matches.add(new MatchDTO(m)));
 	}
 
 	public Long getId() {

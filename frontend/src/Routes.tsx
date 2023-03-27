@@ -2,6 +2,7 @@ import Footer from "components/Footer";
 import Navbar from "components/Navbar";
 import Home from "pages/Home";
 import Info from "pages/Info";
+import Matches from "pages/Matches";
 import Players from "pages/Players";
 import Stadiums from "pages/Stadiums";
 import TeamDetails from "pages/TeamDetails";
@@ -21,6 +22,7 @@ const Routes = () => {
                     <div className="info-zone" style={{padding:"0px 20px"}}>
                         <Info/>
                     </div>
+                    <Matches/>
                 </Route>
 
                 <Route path="/teams" exact>

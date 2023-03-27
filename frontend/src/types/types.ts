@@ -53,3 +53,11 @@ export enum Position {
     FORWARD
 }
 */
+
+export type Match = {
+    id: number;
+    homeTeamId: number;
+    awayTeamId: number;
+    homeTeamGoals: number;
+    awayTeamGoals: number;
+}

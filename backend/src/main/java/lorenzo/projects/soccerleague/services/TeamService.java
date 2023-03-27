@@ -24,14 +24,14 @@ public class TeamService {
 	@Transactional(readOnly = true)
 	public Page<TeamDTO> findTeamBySerie(Pageable pageable, Character serie) {
 		Page<Team> list = repository.findTeamBySerie(pageable, serie);
-		return list.map(x -> new TeamDTO(x, x.getPlayers()));
+		return list.map(x -> new TeamDTO(x, x.getPlayers(), x.getMatches()));
 	}
 	
 	@Transactional(readOnly = true)
 	public TeamDTO findById(Long id) {
 		Optional<Team> obj = repository.findById(id);
 		Team entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found."));
-		return new TeamDTO(entity, entity.getPlayers());
+		return new TeamDTO(entity, entity.getPlayers(), entity.getMatches());
 	}
 	
 	@Transactional

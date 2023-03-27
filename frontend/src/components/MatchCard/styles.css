@@ -1,0 +1,24 @@
+.match-card-container{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: silver;
+    border-radius: 40px;
+    width: 200px;
+}
+
+.match-card-container img{
+    height: 65px;
+}
+
+.match-card-container h3{
+    margin-bottom: 0;
+    color: black;
+}
+
+.match-card-container h4{
+    margin-bottom: 0;
+    color: brown;
+}
