@@ -54,6 +54,8 @@ INSERT INTO tb_team (name, members, international_Cups, continental_Cups, nation
 
 
 
+
+
 INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('Santos', 'Santos', TIMESTAMP WITH TIME ZONE '1990-03-17', 'https://img.a.transfermarkt.technology/portrait/header/140811-1554731294.jpg?lm=1', 0, 14); 
 INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('Rodrigo Caio', 'Rodrigo Caio', TIMESTAMP WITH TIME ZONE '1993-08-17', 'https://img.a.transfermarkt.technology/portrait/header/172054-1471615155.jpg?lm=1', 1, 14); 
 INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('David Luiz', 'David Luiz', TIMESTAMP WITH TIME ZONE '1987-04-22', 'https://img.a.transfermarkt.technology/portrait/header/46741-1472656986.jpg?lm=1', 1, 14); 
@@ -131,3 +133,6 @@ INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) V
 INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('Wellington Rato', 'Wellington Rato', TIMESTAMP WITH TIME ZONE '1992-06-28', 'https://img.a.transfermarkt.technology/portrait/header/542483-1656980162.jpg?lm=1', 2, 18); 
 INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('Luciano', 'Luciano', TIMESTAMP WITH TIME ZONE '1993-05-18', 'https://img.a.transfermarkt.technology/portrait/header/223560-1490622723.jpg?lm=1', 3, 18); 
 INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('Calleri', 'Calleri', TIMESTAMP WITH TIME ZONE '1993-09-23', 'https://img.a.transfermarkt.technology/portrait/header/284727-1583506567.jpg?lm=1', 3, 18); 
+
+
+INSERT INTO tb_match (home_Team_id, away_Team_id, home_Team_Goals, away_Team_Goals) VALUES (1,2,5,0);

@@ -43,6 +43,8 @@ public class Team implements Serializable{
 	@OneToMany(mappedBy = "team")
 	private List<Player> players = new ArrayList<>();
 	
+	@OneToMany(mappedBy = "homeTeam")
+    private List<Match> matches = new ArrayList<>();
 	
 	public Team() {}
 	

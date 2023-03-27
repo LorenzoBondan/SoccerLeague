@@ -1,4 +1,5 @@
 import logoBrasileirao from 'assets/images/logo-brasileirao.png';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 const Home = () => {
@@ -9,7 +10,9 @@ const Home = () => {
                 <h1>THE BRAZILIAN LEAGUE <img src="https://em-content.zobj.net/thumbs/160/apple/325/flag-brazil_1f1e7-1f1f7.png" alt="" /></h1>
                 <p>Check out all teams, stadiums and players of the first division of the <strong>toughest</strong> soccer league in the world</p>
                 <div className='home-button-zone'>
-                    <button className='btn btn-primary btn-home'><span>CHECK OUT</span></button>
+                    <Link to={`/teams`}>
+                        <button className='btn btn-primary btn-home'><span>CHECK OUT</span></button>
+                    </Link>
                 </div>
             </div>
 
