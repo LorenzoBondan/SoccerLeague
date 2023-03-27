@@ -48,11 +48,16 @@ const MatchCard = ({match}: Props) => {
 
     return(
         <div className='match-card-container'>
-            <img src={homeTeam?.imgUrl} alt="" />
-            <h3>{match.homeTeamGoals}</h3>
-            <h4>X</h4>
-            <h3>{match.awayTeamGoals}</h3>
-            <img src={awayTeam?.imgUrl} alt="" />
+            <div className='match-card-content-container'>
+                <div className='match-card-content'>
+                    <img src={homeTeam?.imgUrl} alt="" />
+                    <h3>{match.homeTeamGoals}</h3>
+                    <h4>X</h4>
+                    <h3>{match.awayTeamGoals}</h3>
+                    <img src={awayTeam?.imgUrl} alt="" />
+                </div>
+                
+            </div>
         </div>
     );
 }

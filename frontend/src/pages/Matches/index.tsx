@@ -34,10 +34,11 @@ const Matches = () => {
 
     return(
         <div className='matches-container'>
+            <h1>Matches</h1>
             <div className="row">
                 {page?.content
                   .map(match => (
-                    <div className="col-sm-6 col-lg-4 col-xl-2 matches-column" key={match.id}>
+                    <div className="col-sm-6 col-lg-4 col-xl-3 matches-column" key={match.id}>
                         <MatchCard match={match}/>
                     </div>
                     )
