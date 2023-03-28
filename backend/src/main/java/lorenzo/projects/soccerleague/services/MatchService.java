@@ -1,6 +1,8 @@
 package lorenzo.projects.soccerleague.services;
 
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
@@ -68,18 +70,27 @@ public class MatchService {
 		return dto;
 	}
 	
+	public Set<Long> generatedIds = new HashSet<>();
+	
 	private void generateRandomMatches(MatchDTO dto, Match entity) {
 			Random random = new Random();
 			
-			dto.setHomeTeamId(random.nextLong(20));
-			while(dto.getHomeTeamId() == 0) {
-				dto.setHomeTeamId(random.nextLong(20));
+			dto.setHomeTeamId(random.nextLong(21));
+			while(dto.getHomeTeamId() == 0 || generatedIds.contains(dto.getHomeTeamId())) {
+				dto.setHomeTeamId(random.nextLong(21));
 			}
+			
+			generatedIds.add(dto.getHomeTeamId());
+			
 			dto.setHomeTeamGoals(random.nextInt(4));
-			dto.setAwayTeamId(random.nextLong(20));
-			while(dto.getHomeTeamId() == dto.getAwayTeamId() || dto.getAwayTeamId() == 0) {
-				dto.setAwayTeamId(random.nextLong(20));
+			
+			dto.setAwayTeamId(random.nextLong(21));
+			while(dto.getAwayTeamId() == 0 || generatedIds.contains(dto.getAwayTeamId())) {
+				dto.setAwayTeamId(random.nextLong(21));
 			}
+			
+			generatedIds.add(dto.getAwayTeamId());
+			
 			dto.setAwayTeamGoals(random.nextInt(4));
 			
 			//----
@@ -88,6 +99,10 @@ public class MatchService {
 			entity.setHomeTeamGoals(dto.getHomeTeamGoals());
 			entity.setAwayTeam(teamRepository.getOne(dto.getAwayTeamId()));
 			entity.setAwayTeamGoals(dto.getAwayTeamGoals());
+			
+			if(generatedIds.size() == 20) {
+				generatedIds.clear();
+			}
 		}
 	}
 
