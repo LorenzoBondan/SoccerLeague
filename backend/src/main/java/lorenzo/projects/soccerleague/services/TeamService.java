@@ -28,6 +28,12 @@ public class TeamService {
 	}
 	
 	@Transactional(readOnly = true)
+	public Page<TeamDTO> findTeamByPoints(Pageable pageable) {
+		Page<Team> list = repository.findTeamByPoints(pageable);
+		return list.map(x -> new TeamDTO(x, x.getPlayers(), x.getMatches()));
+	}
+	
+	@Transactional(readOnly = true)
 	public TeamDTO findById(Long id) {
 		Optional<Team> obj = repository.findById(id);
 		Team entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found."));
@@ -45,6 +51,14 @@ public class TeamService {
 			entity.setNationalLeagues(dto.getNationalLeagues());
 			entity.setMembers(dto.getMembers());
 			entity.setSerie(dto.getSerie());
+			
+			entity.setGames(dto.getGames());
+			entity.setPoints(dto.getPoints());
+			entity.setVictories(dto.getVictories());
+			entity.setDraws(dto.getDraws());
+			entity.setDefeats(dto.getDefeats());
+			entity.setGoalsConceded(dto.getGoalsConceded());
+			entity.setGoalsScored(dto.getGoalsScored());
 			
 			entity = repository.save(entity);
 			return new TeamDTO(entity);

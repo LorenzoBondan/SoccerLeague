@@ -1,5 +1,6 @@
 import Footer from "components/Footer";
 import Navbar from "components/Navbar";
+import PlacingTable from "components/PlacingTable";
 import Home from "pages/Home";
 import Info from "pages/Info";
 import Matches from "pages/Matches";
@@ -22,7 +23,14 @@ const Routes = () => {
                     <div className="info-zone" style={{padding:"0px 20px"}}>
                         <Info/>
                     </div>
-                    <Matches/>
+                    <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+                        <Matches/>
+                    </div>
+
+                    <div style={{display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
+                        <h1 style={{textShadow:"5px 5px 5px black"}}>Placing</h1>
+                        <PlacingTable/>
+                    </div>
                 </Route>
 
                 <Route path="/teams" exact>

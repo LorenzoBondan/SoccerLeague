@@ -4,6 +4,10 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    width: 1400px;
+    margin-bottom: 75px;
+    border-bottom: 1px solid silver;
+    padding-bottom: 75px;
 }
 
 .matches-container h1{

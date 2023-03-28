@@ -36,6 +36,14 @@ public class Team implements Serializable{
 	@Column(columnDefinition = "TEXT")
 	private String imgUrl;
 	
+	private Integer points;
+	private Integer games;
+	private Integer victories;
+	private Integer draws;
+	private Integer defeats;
+	private Integer goalsScored;
+	private Integer goalsConceded;
+	
 	@ManyToOne
 	@JoinColumn(name = "stadium_id")
 	private Stadium stadium;
@@ -52,7 +60,9 @@ public class Team implements Serializable{
 
 
 	public Team(Long id, String name, Long members, Integer internationalCups, Integer continentalCups,
-			Integer nationalCups, Integer nationalLeagues, Character serie, String imgUrl, Stadium stadium) {
+			Integer nationalCups, Integer nationalLeagues, Character serie, String imgUrl, Stadium stadium,
+			Integer points, Integer games, Integer victories, Integer draws, Integer defeats, Integer goalsScored, 
+			Integer goalsConceded) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -64,6 +74,14 @@ public class Team implements Serializable{
 		this.serie = serie;
 		this.imgUrl = imgUrl;
 		this.stadium = stadium;
+		
+		this.points = points;
+		this.games = games;
+		this.victories = victories;
+		this.draws = draws;
+		this.defeats = defeats;
+		this.goalsScored = goalsScored;
+		this.goalsConceded = goalsConceded;
 	}
 
 
@@ -166,6 +184,63 @@ public class Team implements Serializable{
 		this.stadium = stadium;
 	}
 	
+	
+	public Integer getPoints() {
+		return points;
+	}
+
+	public void setPoints(Integer points) {
+		this.points = points;
+	}
+
+	public Integer getGames() {
+		return games;
+	}
+
+	public void setGames(Integer games) {
+		this.games = games;
+	}
+
+	public Integer getVictories() {
+		return victories;
+	}
+
+	public void setVictories(Integer victories) {
+		this.victories = victories;
+	}
+
+	public Integer getDraws() {
+		return draws;
+	}
+
+	public void setDraws(Integer draws) {
+		this.draws = draws;
+	}
+
+	public Integer getDefeats() {
+		return defeats;
+	}
+
+	public void setDefeats(Integer defeats) {
+		this.defeats = defeats;
+	}
+
+	public Integer getGoalsScored() {
+		return goalsScored;
+	}
+
+	public void setGoalsScored(Integer goalsScored) {
+		this.goalsScored = goalsScored;
+	}
+
+	public Integer getGoalsConceded() {
+		return goalsConceded;
+	}
+
+	public void setGoalsConceded(Integer goalsConceded) {
+		this.goalsConceded = goalsConceded;
+	}
+
 
 	public List<Match> getMatches() {
 		return matches;
@@ -173,6 +248,10 @@ public class Team implements Serializable{
 
 	public List<Player> getPlayers() {
 		return players;
+	}
+	
+	public Integer goalDifference() {
+		return goalsScored - goalsConceded;
 	}
 
 

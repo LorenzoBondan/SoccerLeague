@@ -27,6 +27,12 @@ public class TeamResource {
 		return ResponseEntity.ok().body(list);
 	}
 	
+	@GetMapping(value = "/placing")
+	public ResponseEntity<Page<TeamDTO>> findTeamByPoints(Pageable pageable){		
+		Page<TeamDTO> list = service.findTeamByPoints(pageable);	
+		return ResponseEntity.ok().body(list);
+	}
+	
 	@GetMapping(value = "/team/{id}")
 	public ResponseEntity<TeamDTO> findById(@PathVariable Long id) {
 		TeamDTO dto = service.findById(id);	

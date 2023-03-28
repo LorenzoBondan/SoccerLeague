@@ -14,4 +14,6 @@ public interface TeamRepository extends JpaRepository<Team,Long>{
 	@Query(nativeQuery = true, value = "SELECT * from tb_team WHERE serie = :serie ORDER BY name ASC")
 	Page<Team> findTeamBySerie(Pageable pageable, Character serie);
 
+	@Query(nativeQuery = true, value = "SELECT * from tb_team ORDER BY points DESC")
+	Page<Team> findTeamByPoints(Pageable pageable);
 }

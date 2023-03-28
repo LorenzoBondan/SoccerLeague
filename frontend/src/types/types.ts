@@ -33,6 +33,15 @@ export type Team = {
     imgUrl: string;
     stadium: Stadium;
     players: Player[];
+
+    games: number;
+    points: number;
+    victories: number;
+    draws: number;
+    defeats: number;
+    goalsScored: number;
+    goalsConceded: number;
+    goalDifference: number;
 }
 
 export type Player = {

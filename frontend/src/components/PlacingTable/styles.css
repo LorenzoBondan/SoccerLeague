@@ -1,0 +1,75 @@
+.placing-table{
+    width: 70%;
+    margin-top: 30px;
+    border-spacing: 0; /*borda contínua entre os elementos */
+    border: 1px solid #72849A;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.8);
+    margin-bottom: 100px;
+}
+
+.placing-table thead th {
+    text-align: left;
+    height: 55px;
+    font-size: 12px;
+    color: black;
+    padding-left: 5px;
+    background-color: rgb(200, 200, 200);
+}
+
+.placing-table tbody td {
+    height: 70px;
+    border-top: 1px solid #72849A;
+    font-size: 12px;
+    transition: background .3s; /* "animação" ao passar o mouse por cima */
+    padding: 0 5px;
+    color: rgba(0,0,0,0.7);
+}
+
+/*
+.placing-table tbody td:first-of-type {
+    padding-left: 30px;
+    text-align: left;
+}
+*/
+
+.placing-table tbody tr:hover > td {
+    background-color: rgb(200, 200, 200);
+}
+
+/* cores das linhas alternadas */
+.placing-table tbody tr:nth-child(even) {
+
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.placing-table tbody tr:nth-child(odd) {
+    background-color: rgba(255,255,255,1);
+}
+
+@media(min-width:576px){
+    
+    .placing-table thead th {
+        font-size: 14px;
+        padding-left: 10px;
+        height: 55px;
+    }
+    
+    .placing-table tbody td {
+        font-size: 12px;
+        padding: 0 10px;
+        height: 55px;
+    }
+}
+
+@media(min-width:992px){
+  
+    .placing-table thead th {
+        font-size: 16px;
+        padding-left: 30px;
+    }
+    
+    .placing-table tbody td {
+        font-size: 18px;
+        padding: 0 30px;
+    }
+}

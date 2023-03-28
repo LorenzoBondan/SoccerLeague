@@ -25,6 +25,13 @@ public class TeamDTO implements Serializable {
 	
 	private StadiumDTO stadium;
 	
+	private Integer points;
+	private Integer games;
+	private Integer victories;
+	private Integer draws;
+	private Integer defeats;
+	private Integer goalsScored;
+	private Integer goalsConceded;
 	
 	private List<PlayerDTO> players = new ArrayList<>();
 	
@@ -33,7 +40,9 @@ public class TeamDTO implements Serializable {
 	public TeamDTO() {}
 
 	public TeamDTO(Long id, String name, Long members, Integer internationalCups, Integer continentalCups,
-			Integer nationalCups, Integer nationalLeagues, Character serie, String imgUrl, StadiumDTO stadium) {
+			Integer nationalCups, Integer nationalLeagues, Character serie, String imgUrl, StadiumDTO stadium, 
+			Integer points, Integer games, Integer victories, Integer draws, Integer defeats, Integer goalsScored, 
+			Integer goalsConceded) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -45,6 +54,14 @@ public class TeamDTO implements Serializable {
 		this.serie = serie;
 		this.imgUrl = imgUrl;
 		this.stadium = stadium;
+		
+		this.points = points;
+		this.games = games;
+		this.victories = victories;
+		this.draws = draws;
+		this.defeats = defeats;
+		this.goalsScored = goalsScored;
+		this.goalsConceded = goalsConceded;
 	}
 	
 	public TeamDTO(Team entity) {
@@ -59,6 +76,14 @@ public class TeamDTO implements Serializable {
 		this.imgUrl = entity.getImgUrl();
 		
 		this.stadium = new StadiumDTO(entity.getStadium());
+		
+		this.points = entity.getPoints();
+		this.games = entity.getGames();
+		this.victories = entity.getVictories();
+		this.draws = entity.getDraws();
+		this.defeats = entity.getDefeats();
+		this.goalsScored = entity.getGoalsScored();
+		this.goalsConceded = entity.getGoalsConceded();
 	}
 	
 	public TeamDTO(Team entity, List<Player> players, List<Match> matches) {
@@ -148,6 +173,66 @@ public class TeamDTO implements Serializable {
 	}
 	
 
+	public Integer getPoints() {
+		return points;
+	}
+
+	public void setPoints(Integer points) {
+		this.points = points;
+	}
+
+	public Integer getGames() {
+		return games;
+	}
+
+	public void setGames(Integer games) {
+		this.games = games;
+	}
+
+	public Integer getVictories() {
+		return victories;
+	}
+
+	public void setVictories(Integer victories) {
+		this.victories = victories;
+	}
+
+	public Integer getDraws() {
+		return draws;
+	}
+
+	public void setDraws(Integer draws) {
+		this.draws = draws;
+	}
+
+	public Integer getDefeats() {
+		return defeats;
+	}
+
+	public void setDefeats(Integer defeats) {
+		this.defeats = defeats;
+	}
+
+	public Integer getGoalsScored() {
+		return goalsScored;
+	}
+
+	public void setGoalsScored(Integer goalsScored) {
+		this.goalsScored = goalsScored;
+	}
+
+	public Integer getGoalsConceded() {
+		return goalsConceded;
+	}
+
+	public void setGoalsConceded(Integer goalsConceded) {
+		this.goalsConceded = goalsConceded;
+	}
+
+	public List<MatchDTO> getMatches() {
+		return matches;
+	}
+
 	public List<PlayerDTO> getPlayers() {
 		return players;
 	}
@@ -169,6 +254,8 @@ public class TeamDTO implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 	
-	
+	public Integer goalDifference() {
+		return goalsScored - goalsConceded;
+	}
 
 }
