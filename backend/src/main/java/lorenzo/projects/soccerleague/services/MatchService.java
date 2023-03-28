@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import lorenzo.projects.soccerleague.dto.MatchDTO;
 import lorenzo.projects.soccerleague.entities.Match;
+import lorenzo.projects.soccerleague.entities.Team;
 import lorenzo.projects.soccerleague.repositories.MatchRepository;
 import lorenzo.projects.soccerleague.repositories.TeamRepository;
 import lorenzo.projects.soccerleague.services.exceptions.ResourceNotFoundException;
@@ -103,6 +104,46 @@ public class MatchService {
 			if(generatedIds.size() == 20) {
 				generatedIds.clear();
 			}
+			
+			updateTable(dto.getHomeTeamId(), dto.getHomeTeamGoals(), dto.getAwayTeamId(), dto.getAwayTeamGoals());
 		}
+	
+	private void updateTable(Long homeTeamId, Integer homeTeamGoalsScored, Long awayTeamId, Integer awayTeamGoalsScored) {
+		Team homeTeam = teamRepository.getOne(homeTeamId);
+		Team awayTeam = teamRepository.getOne(awayTeamId);
+		
+		homeTeam.setGames(homeTeam.getGames() + 1);
+		awayTeam.setGames(awayTeam.getGames() + 1);
+		
+		homeTeam.setGoalsScored(homeTeam.getGoalsScored() + homeTeamGoalsScored);
+		awayTeam.setGoalsScored(awayTeam.getGoalsScored() + awayTeamGoalsScored);
+		
+		homeTeam.setGoalsConceded(homeTeam.getGoalsConceded() + awayTeamGoalsScored);
+		awayTeam.setGoalsConceded(awayTeam.getGoalsConceded() + homeTeamGoalsScored);
+		
+		if(homeTeamGoalsScored > awayTeamGoalsScored) {
+			homeTeam.setVictories(homeTeam.getVictories() + 1);
+			awayTeam.setDefeats(awayTeam.getDefeats() + 1);
+			
+			homeTeam.setPoints(homeTeam.getPoints() + 3);
+		}
+		else if(awayTeamGoalsScored > homeTeamGoalsScored) {
+			awayTeam.setVictories(awayTeam.getVictories() + 1);
+			homeTeam.setDefeats(homeTeam.getDefeats() + 1);
+			
+			awayTeam.setPoints(awayTeam.getPoints() + 3);
+		}
+		else {
+			homeTeam.setDraws(homeTeam.getDraws() + 1);
+			awayTeam.setDraws(awayTeam.getDraws() + 1);
+			
+			homeTeam.setPoints(homeTeam.getPoints() + 1);
+			awayTeam.setPoints(awayTeam.getPoints() + 1);
+		}
+		
+		teamRepository.save(homeTeam);
+		teamRepository.save(awayTeam);
+	}
+	
 	}
 
