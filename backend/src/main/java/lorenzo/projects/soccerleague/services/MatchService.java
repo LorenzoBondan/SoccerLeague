@@ -1,6 +1,9 @@
 package lorenzo.projects.soccerleague.services;
 
+import java.util.Random;
+
 import javax.persistence.EntityNotFoundException;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -56,4 +59,35 @@ public class MatchService {
 		entity.setAwayTeam(teamRepository.getOne(dto.getAwayTeamId()));
 		entity.setAwayTeamGoals(dto.getAwayTeamGoals());
 	}
-}
+	
+	@Transactional
+	public @Valid MatchDTO insertRandomMatches(MatchDTO dto) {
+		Match entity = new Match();
+		generateRandomMatches(dto, entity);
+		entity = repository.save(entity);
+		return dto;
+	}
+	
+	private void generateRandomMatches(MatchDTO dto, Match entity) {
+			Random random = new Random();
+			
+			dto.setHomeTeamId(random.nextLong(20));
+			while(dto.getHomeTeamId() == 0) {
+				dto.setHomeTeamId(random.nextLong(20));
+			}
+			dto.setHomeTeamGoals(random.nextInt(4));
+			dto.setAwayTeamId(random.nextLong(20));
+			while(dto.getHomeTeamId() == dto.getAwayTeamId() || dto.getAwayTeamId() == 0) {
+				dto.setAwayTeamId(random.nextLong(20));
+			}
+			dto.setAwayTeamGoals(random.nextInt(4));
+			
+			//----
+			
+			entity.setHomeTeam(teamRepository.getOne(dto.getHomeTeamId()));
+			entity.setHomeTeamGoals(dto.getHomeTeamGoals());
+			entity.setAwayTeam(teamRepository.getOne(dto.getAwayTeamId()));
+			entity.setAwayTeamGoals(dto.getAwayTeamGoals());
+		}
+	}
+

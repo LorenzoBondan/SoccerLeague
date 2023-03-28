@@ -48,4 +48,11 @@ public class MatchResource {
 		return ResponseEntity.ok().body(dto);
 	}
 	
+	@PostMapping(value = "/random")
+	public void insertRandomMatches (@Valid @RequestBody MatchDTO dto) {
+		for(Integer i = 0; i < 10; i++) {
+			dto = service.insertRandomMatches(dto);
+		}
+		return;	
+	}
 }
