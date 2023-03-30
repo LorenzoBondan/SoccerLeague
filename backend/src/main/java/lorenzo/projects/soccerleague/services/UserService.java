@@ -77,6 +77,19 @@ public class UserService implements UserDetailsService {
 			throw new ResourceNotFoundException("Id not found " + id);
 		}
 	}
+	
+	@Transactional
+	public UserDTO updateFavoriteTeam(Long id, UserUpdateDTO dto) {
+		try {
+			User entity = repository.getOne(id);
+			entity.setFavoriteTeamId(dto.getFavoriteTeamId());
+			entity = repository.save(entity);
+			return new UserDTO(entity);
+		} catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException("Id not found " + id);
+		}
+	}
+	
 
 	public void delete(Long id) {
 		try {
@@ -94,6 +107,7 @@ public class UserService implements UserDetailsService {
 
 		entity.setName(dto.getName());
 		entity.setEmail(dto.getEmail());
+		entity.setFavoriteTeamId(dto.getFavoriteTeamId());
 
 		entity.getRoles().clear();
 

@@ -249,7 +249,7 @@ public class Team implements Serializable{
 	public List<Player> getPlayers() {
 		return players;
 	}
-	
+
 	public Integer goalDifference() {
 		return goalsScored - goalsConceded;
 	}

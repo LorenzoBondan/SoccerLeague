@@ -1,16 +1,3 @@
-INSERT INTO tb_user (name, email, password) VALUES ('Alex', 'alex@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
-INSERT INTO tb_user (name, email, password) VALUES ('Maria', 'maria@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG');
-
-
-INSERT INTO tb_role (authority) VALUES ('ROLE_OPERATOR');
-INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');
-
-
-INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
-INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
-INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
-
-
 INSERT INTO tb_stadium (name, capacity, location, img_Url, latitude, longitude) VALUES ('Arena do Grêmio', 55662, 'Porto Alegre - RS', 'https://archello.s3.eu-central-1.amazonaws.com/images/2013/12/10/1-1343.1506072179.125.jpg', -29.9739734, -51.1970005);
 INSERT INTO tb_stadium (name, capacity, location, img_Url, latitude, longitude) VALUES ('Beira Rio', 50848, 'Porto Alegre - RS', 'https://www.rbsdirect.com.br/imagesrc/25633438.jpg?w=700', -30.0654496, -51.7961627);
 INSERT INTO tb_stadium (name, capacity, location, img_Url, latitude, longitude) VALUES ('Allianz Parque', 52000, 'São Paulo - SP', 'https://upload.wikimedia.org/wikipedia/commons/9/95/Imagens_da_Cidade_de_S%C3%A3o_Paulo_e_Zool%C3%B3gico_da_Capital_Paulista._%2847480340301%29.jpg', -23.5276157, -46.6829509);
@@ -53,7 +40,17 @@ INSERT INTO tb_team (name, members, international_Cups, continental_Cups, nation
 INSERT INTO tb_team (name, members, international_Cups, continental_Cups, national_Cups, national_Leagues, serie, img_Url, stadium_id, games, points, victories, draws, defeats, goals_Scored, goals_Conceded) VALUES ('Vasco', 54877, 0, 1, 1, 4, 'a', 'https://logodetimes.com/times/vasco-da-gama/logo-vasco-da-gama-512.png', 8, 15, 9, 1, 8, 6, 6, 18);
 
 
+INSERT INTO tb_user (name, email, password, favorite_Team_Id) VALUES ('Alex', 'alex@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG', 1);
+INSERT INTO tb_user (name, email, password, favorite_Team_Id) VALUES ('Maria', 'maria@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG', 2);
 
+
+INSERT INTO tb_role (authority) VALUES ('ROLE_OPERATOR');
+INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');
+
+
+INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 
 
 INSERT INTO tb_player (name, nickname, birth_Date, img_Url, position, team_id) VALUES ('Santos', 'Santos', TIMESTAMP WITH TIME ZONE '1990-03-17', 'https://img.a.transfermarkt.technology/portrait/header/140811-1554731294.jpg?lm=1', 0, 14); 

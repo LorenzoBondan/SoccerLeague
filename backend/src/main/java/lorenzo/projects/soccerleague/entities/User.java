@@ -44,15 +44,18 @@ public class User implements UserDetails, Serializable{
 			)
 	private Set<Role> roles = new HashSet<>();
 	
+	private Long favoriteTeamId;
+	
 	public User() {
 	}
 	
-	public User(Long id, String name, String email, String password) {
+	public User(Long id, String name, String email, String password, Long favoriteTeamId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
+		this.favoriteTeamId = favoriteTeamId;
 	}
 
 	public Long getId() {
@@ -87,6 +90,13 @@ public class User implements UserDetails, Serializable{
 		this.password = password;
 	}
 	
+	public Long getFavoriteTeamId() {
+		return favoriteTeamId;
+	}
+
+	public void setFavoriteTeamId(Long favoriteTeamId) {
+		this.favoriteTeamId = favoriteTeamId;
+	}
 
 	@Override
 	public int hashCode() {
