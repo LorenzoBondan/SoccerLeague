@@ -4,7 +4,7 @@ import { SpringPage, Team } from 'types/types';
 import { requestBackend } from 'util/requests';
 import './styles.css';
 
-const PlacingTable = () => {
+const PlacingTable = ({onUpdate} : any) => {
 
     const [page, setPage] = useState<SpringPage<Team>>();
 
@@ -17,9 +17,9 @@ const PlacingTable = () => {
         requestBackend(params) 
           .then(response => {
             setPage(response.data);
-            window.scrollTo(0, 0);
+            onUpdate();
           })
-      }, [])
+      }, [onUpdate])
   
       useEffect(() => {
         getTeams();

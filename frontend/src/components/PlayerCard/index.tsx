@@ -50,7 +50,7 @@ const PlayerCard = ({player} : Props) => {
   
       useEffect(() => {
         getTeamById(player.teamId);
-      }, );
+      }, [getTeamById, player.teamId]);
 
 
     return(

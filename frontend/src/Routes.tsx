@@ -1,6 +1,5 @@
 import Footer from "components/Footer";
 import Navbar from "components/Navbar";
-import PlacingTable from "components/PlacingTable";
 import Home from "pages/Home";
 import Info from "pages/Info";
 import Matches from "pages/Matches";
@@ -9,9 +8,11 @@ import Stadiums from "pages/Stadiums";
 import TeamDetails from "pages/TeamDetails";
 import Teams from "pages/Teams";
 import { Route, Router, Switch } from "react-router-dom";
+
 import history from "util/history";
 
 const Routes = () => {
+
     return(
         <Router history={history}> 
             <Navbar/>
@@ -25,11 +26,6 @@ const Routes = () => {
                     </div>
                     <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
                         <Matches/>
-                    </div>
-
-                    <div style={{display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center"}}>
-                        <h1 style={{textShadow:"5px 5px 5px black"}}>Placing</h1>
-                        <PlacingTable/>
                     </div>
                 </Route>
 

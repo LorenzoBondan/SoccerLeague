@@ -5,11 +5,30 @@
     justify-content: center;
     padding: 20px;
     width: 1400px;
-    margin-bottom: 75px;
-    border-bottom: 1px solid silver;
-    padding-bottom: 75px;
 }
 
 .matches-container h1{
     text-shadow: 5px 5px 5px black;
+}
+
+.matches-container button, .matches-container button:hover{
+    margin: 20px;
+    width: 50%;
+    height: 50px;
+    font-size: 22px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 2px black;
+    color: white;
+    letter-spacing: 0.04rem;
+}
+
+.placing-table-on-matches-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 1px solid silver;
 }
