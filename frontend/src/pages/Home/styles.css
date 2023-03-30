@@ -46,7 +46,7 @@
 .home-content-container button{
     width: 200px;
     height: 50px;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 3px 3px 1px black;
 }
 
@@ -58,7 +58,7 @@
 .home-content-container button span{
     -webkit-text-stroke: 0.75px black;
    color: white;   
-   letter-spacing: 0.12rem; 
+   letter-spacing: 0.05rem; 
    font-size: 18px;
    font-family: unset;
 }

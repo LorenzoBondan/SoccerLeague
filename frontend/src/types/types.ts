@@ -70,3 +70,17 @@ export type Match = {
     homeTeamGoals: number;
     awayTeamGoals: number;
 }
+
+export type User = {
+    id : number;
+    name: string;
+    email: string;
+    password: string;
+    favoriteTeamId : number;
+    roles : Role[];
+}
+
+export type Role = {
+    id: number;
+    authority : string;
+}

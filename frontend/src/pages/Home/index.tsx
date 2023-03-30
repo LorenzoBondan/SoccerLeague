@@ -11,7 +11,7 @@ const Home = () => {
                 <p>Check out all teams, stadiums and players of the first division of the <strong>toughest</strong> soccer league in the world</p>
                 <div className='home-button-zone'>
                     <Link to={`/teams`}>
-                        <button className='btn btn-primary btn-home'><span>CHECK OUT</span></button>
+                        <button className='btn btn-primary btn-home'><span>JOIN IN</span></button>
                     </Link>
                 </div>
             </div>
