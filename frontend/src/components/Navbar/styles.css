@@ -30,8 +30,9 @@
 .main-menu {
     display: flex;
     font-size: 20px;
-    width: 380px; /* tamanho do início do home até o final do admin */
+    width: 420px; /* tamanho do início do home até o final do admin */
     justify-content: space-between;
+    margin-right: 10px;
 }
 
 .main-menu a, .main-menu i {
@@ -41,8 +42,8 @@
     font-size: 18px;
 }
 
-.main-menu a:hover, .main-menu svg:hover{
-    color: #FFF;
+li a:hover{
+    color: white;
 }
 
 .main-menu a.active {
@@ -54,8 +55,49 @@
     color:#3175A3;
 }
 
+.nav-login-logout {
+    display: none;
+}
+
+.nav-username {
+    display: none;
+}
+
+.nav-login-logout a {
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 8px 14px;
+    border: 1px solid purple;
+    border-radius: 8px;
+    color: purple;
+}
+
+.nav-login-logout a:hover{
+    color: white;
+}
+
 @media(min-width:576px){
     .nav-logo-text h4 {
         font-size: 2rem;
+    }
+}
+
+@media(min-width:768px){
+
+    .nav-login-logout {
+        display: unset;
+        color: purple;
+        margin-right: 20px;
+    }
+}
+
+@media(min-width:992px){
+    .nav-login-logout {
+        margin-right: 40px;
+    }
+
+    .nav-username {
+        display: unset;
+        margin-right: 20px;
     }
 }

@@ -3,13 +3,51 @@ import '@popperjs/core';
 import 'bootstrap/js/src/collapse';
 import logoBrasileirao from 'assets/images/logo-brasileirao.png';
 
+import { AuthContext } from 'AuthContext';
+import { useContext, useEffect } from 'react';
+import { getTokenData, hasAnyRoles, isAuthenticated } from 'util/auth';
+import { removeAuthData } from 'util/storage';
+import history from 'util/history';
+
 import { IoShirtSharp } from 'react-icons/io5';
 import { MdStadium } from 'react-icons/md';
 import { FaUsers } from 'react-icons/fa';
+import { MdOutlineAdminPanelSettings } from 'react-icons/md';
 
 import './styles.css';
 
+
 const Navbar = () => {
+
+    const { authContextData, setAuthContextData } = useContext(AuthContext);
+
+    useEffect(() => {
+        if(isAuthenticated()){
+          setAuthContextData({
+            authenticated: true,
+            tokenData: getTokenData()
+          })
+        }
+        else{
+          setAuthContextData({
+            authenticated: false,
+          })
+        }
+      }, [setAuthContextData]);
+
+
+      const handleLogoutClick = (event : React.MouseEvent<HTMLAnchorElement>) => {
+        event.preventDefault(); 
+        
+        removeAuthData();
+    
+        setAuthContextData({
+          authenticated: false,
+        })
+    
+        history.replace('/'); 
+    }
+
     return(
         <nav className="navbar navbar-expand-md navbar-dark bg-primary main-nav">
             
@@ -37,38 +75,51 @@ const Navbar = () => {
                 <ul className='navbar-nav offset-md-8 main-menu'>
                     <li>
                         <NavLink to="/teams" activeClassName='active' exact>
-                            <i style={{
-                                marginRight:"4px",
-                            }}>
-                            <IoShirtSharp/>
-                            </i>
+                            <IoShirtSharp style={{marginRight:"4px"}}/>
                             Teams
                         </NavLink>
                     </li>
 
                     <li>
                         <NavLink to="/stadiums" activeClassName='active'>
-                            <i style={{
-                                marginRight:"4px",
-                            }}>
-                            <MdStadium/>
-                            </i>
+                            <MdStadium style={{marginRight:"4px"}}/>
                             Stadiums
                         </NavLink>
                     </li>
 
                     <li>
                         <NavLink to="/players" activeClassName='active'>
-                            <i style={{
-                                marginRight:"4px",
-                            }}>
-                            <FaUsers/>
-                            </i>
+                            <FaUsers style={{marginRight:"4px"}}/>
                             Players
                         </NavLink>
                     </li>
 
+                    {hasAnyRoles(["ROLE_ADMIN"]) ? (
+                        <li>
+                            <NavLink to="/admin" activeClassName='active'>
+                                <MdOutlineAdminPanelSettings style={{marginRight:"4px"}}/>
+                                Admin
+                            </NavLink>
+                        </li>
+                    )
+                    : (
+                        <div></div>
+                    )}
+
                     </ul>
+                </div>
+
+                <div className='nav-login-logout'>
+                    { authContextData.authenticated ? (
+                        <>
+                        <span className='nav-username'>{authContextData.tokenData?.user_name}</span>
+                        <a href="#logout" onClick={handleLogoutClick}>LOGOUT</a>
+                        </>
+                    ) : (
+                        <Link to="/admin/auth">LOGIN</Link>
+                    )
+
+                    }
                 </div>
         </nav>
     );

@@ -45,7 +45,7 @@ public class TeamService {
 		try {
 			Team entity = repository.getOne(id);
 			
-			entity.setInternationalCups(dto.getContinentalCups());
+			entity.setInternationalCups(dto.getInternationalCups());
 			entity.setContinentalCups(dto.getContinentalCups());
 			entity.setNationalCups(dto.getNationalCups());
 			entity.setNationalLeagues(dto.getNationalLeagues());

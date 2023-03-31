@@ -1,5 +1,6 @@
 import Footer from "components/Footer";
 import Navbar from "components/Navbar";
+import Admin from "pages/Admin";
 import Auth from "pages/Admin/Auth";
 import Home from "pages/Home";
 import Info from "pages/Info";
@@ -57,6 +58,11 @@ const Routes = () => {
                 <Redirect from='/admin/auth' to='/admin/auth/login' exact />
                 <Route path="/admin/auth">
                     <Auth />
+                </Route>
+
+                <Redirect from="/admin" to="/admin/teams" exact />
+                <Route path="/admin">
+                    <Admin />
                 </Route>
 
             </Switch>

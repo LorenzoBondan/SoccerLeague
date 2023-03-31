@@ -1,0 +1,94 @@
+.team-crud-card{
+    margin: 30px;
+    text-decoration: none;
+    max-height: 453px;
+    min-width: 280px;
+}
+
+.team-crud-card-top-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-crud-card-top-container img {
+    height: 120px;
+    width: auto;
+}
+
+.team-crud-card-bottom-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
+.team-crud-card-bottom-container h3{
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.team-crud-card-buttons-container {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-crud-card-button{
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: -0.015em;
+    border-radius: 10px;
+    width: 150px !important;
+    height: 40px;
+    color: #fff;
+    border-color: #fff;
+}
+
+@media(min-width:768px){
+    .team-crud-card{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+    }
+
+    .team-crud-card-top-container{
+        text-align: center;
+        padding: 16px 0;
+        border-bottom: 0;
+        border-right: 1px solid #E1E1E1;
+    }
+
+    .team-crud-card-top-container img{
+        margin: 0px 10px;
+    }
+
+    .team-crud-card-buttons-container{
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+
+    .team-crud-card-button-first{
+        margin-left: 0px;
+        margin-top: 22px;
+    }
+
+    .team-crud-card-button{
+        width: 140px;
+    }
+
+}
+
+@media(min-width:992px){
+
+    .team-crud-card{
+        min-width: 400px;
+    }
+    .team-crud-card-button {
+        width: 120px;
+    }
+}

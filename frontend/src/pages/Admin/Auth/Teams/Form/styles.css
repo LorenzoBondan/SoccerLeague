@@ -1,0 +1,64 @@
+.teams-card-form-card{
+    padding: 20px;
+}
+
+.teams-card-form-card h1{
+    font-weight: 400;
+    font-size: 25px;
+    letter-spacing: -0.015em;
+    color: #fff;
+    text-shadow: 5px 5px 5px black;
+    margin-bottom: 30px;
+}
+
+.margin-bottom-30{
+    margin-bottom: 30px;
+}
+
+.teams-crud-inputs-container{
+    margin-bottom: 30px;
+}
+
+.teams-crud-inputs-left-container{
+    margin-bottom: 30px;
+}
+
+.teams-crud-buttons-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.teams-crud-buttons{
+    height: 50px;
+    border-radius: 10px;
+    width: 110px;
+    font-weight: bold;
+}
+
+@media(min-width:576px){
+    .teams-crud-buttons-container{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .teams-crud-buttons{
+        margin-left: 30px;
+        width: 270px;
+    }
+
+}
+
+@media(min-width:992px){
+    
+    .teams-crud-inputs-left-container{
+        margin-bottom: 0;
+    }
+
+}
+
+@media(min-width:1200px){
+
+    .teams-crud-container{
+        float: left;
+    }
+}
