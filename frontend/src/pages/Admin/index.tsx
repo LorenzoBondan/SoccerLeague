@@ -6,11 +6,12 @@ import { hasAnyRoles, isAuthenticated } from "util/auth";
 
 import { MdDangerous } from 'react-icons/md';
 import Teams from "./Auth/Teams";
+import Players from "./Auth/Players";
 
 function Admin(){
     return(
 
-        <div className="admin-container" style={{display:"flex", justifyContent:"center"}}>
+        <div className="admin-container" style={{display:"flex", justifyContent:"flex-start"}}>
 
         {hasAnyRoles(["ROLE_OPERATOR", "ROLE_ADMIN"])?  (
             <>
@@ -24,7 +25,7 @@ function Admin(){
                             </PrivateRoute>
 
                             <PrivateRoute path="/admin/players">
-
+                                <Players/>
                             </PrivateRoute>
 
                             <PrivateRoute path="/admin/users">

@@ -1,5 +1,7 @@
 package lorenzo.projects.soccerleague.services;
 
+import java.util.Optional;
+
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,13 @@ public class PlayerService {
 	public Page<PlayerDTO> findAllPaged(Pageable pageable) {
 		Page<Player> list = repository.findAll(pageable);
 		return list.map(x -> new PlayerDTO(x));
+	}
+	
+	@Transactional(readOnly = true)
+	public PlayerDTO findById(Long id) {
+		Optional<Player> obj = repository.findById(id);
+		Player entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found."));
+		return new PlayerDTO(entity);
 	}
 	
 	@Transactional
