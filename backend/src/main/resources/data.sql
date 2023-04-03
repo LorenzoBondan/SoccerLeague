@@ -40,6 +40,43 @@ INSERT INTO tb_team (name, members, international_Cups, continental_Cups, nation
 INSERT INTO tb_team (name, members, international_Cups, continental_Cups, national_Cups, national_Leagues, serie, img_Url, stadium_id, games, points, victories, draws, defeats, goals_Scored, goals_Conceded) VALUES ('Vasco', 54877, 0, 1, 1, 4, 'a', 'https://logodetimes.com/times/vasco-da-gama/logo-vasco-da-gama-512.png', 8, 15, 9, 1, 8, 6, 6, 18);
 
 
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (1,2);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (2,1);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (3,10);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (3,18);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (3,19);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (4,12);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (4,5);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (5,4);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (5,12);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (6,11);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (8,14);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (8,15);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (8,20);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (10,3);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (10,18);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (10,19);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (11,6);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (12,4);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (12,5);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (14,15);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (14,20);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (14,8);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (15,14);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (15,20);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (15,8);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (18,10);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (18,3);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (18,19);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (19,10);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (19,3);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (19,18);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (20,14);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (20,15);
+INSERT INTO tb_team_rival (team_id, rival_id) VALUES (20,8);
+
+
+
 INSERT INTO tb_user (name, email, password, favorite_Team_Id) VALUES ('Alex', 'alex@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG', 1);
 INSERT INTO tb_user (name, email, password, favorite_Team_Id) VALUES ('Maria', 'maria@gmail.com', '$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG', 2);
 

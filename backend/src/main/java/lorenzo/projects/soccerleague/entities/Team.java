@@ -2,18 +2,25 @@ package lorenzo.projects.soccerleague.entities;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.springframework.lang.Nullable;
 
 import lorenzo.projects.soccerleague.dto.TeamDTO;
 
@@ -53,6 +60,14 @@ public class Team implements Serializable{
 	
 	@OneToMany(mappedBy = "homeTeam")
     private List<Match> matches = new ArrayList<>();
+	
+	@Nullable
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "tb_team_rival",
+				joinColumns = @JoinColumn(name = "team_id"), 
+				inverseJoinColumns = @JoinColumn(name = "rival_id")
+			)
+	private Set<Team> rivals = new HashSet<>();
 	
 	public Team() {}
 	
@@ -248,6 +263,11 @@ public class Team implements Serializable{
 
 	public List<Player> getPlayers() {
 		return players;
+	}
+	
+
+	public Set<Team> getRivals() {
+		return rivals;
 	}
 
 	public Integer goalDifference() {
