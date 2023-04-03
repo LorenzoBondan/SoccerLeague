@@ -5,7 +5,6 @@ import { useHistory, useParams } from 'react-router-dom';
 import { requestBackend } from 'util/requests';
 import { Player, Team } from 'types/types';
 
-import './styles.css';
 
 type UrlParams = {
     playerId: string;

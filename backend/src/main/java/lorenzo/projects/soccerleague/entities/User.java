@@ -18,6 +18,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import org.springframework.lang.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -44,12 +45,13 @@ public class User implements UserDetails, Serializable{
 			)
 	private Set<Role> roles = new HashSet<>();
 	
+	@Nullable
 	private Long favoriteTeamId;
 	
 	public User() {
 	}
 	
-	public User(Long id, String name, String email, String password, Long favoriteTeamId) {
+	public User(Long id, String name, String email, String password, @Nullable Long favoriteTeamId) {
 		super();
 		this.id = id;
 		this.name = name;

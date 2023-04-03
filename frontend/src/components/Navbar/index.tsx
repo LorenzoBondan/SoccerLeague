@@ -13,6 +13,7 @@ import { IoShirtSharp } from 'react-icons/io5';
 import { MdStadium } from 'react-icons/md';
 import { FaUsers } from 'react-icons/fa';
 import { MdOutlineAdminPanelSettings } from 'react-icons/md';
+import { CgProfile } from 'react-icons/cg';
 
 import './styles.css';
 
@@ -113,6 +114,12 @@ const Navbar = () => {
                     { authContextData.authenticated ? (
                         <>
                         <span className='nav-username'>{authContextData.tokenData?.user_name}</span>
+                        <Link to="/profile">
+                            <button className="btn btn-primary">
+                                <CgProfile style={{marginRight:"5px"}}/>
+                                MY PROFILE
+                            </button>
+                        </Link>
                         <a href="#logout" onClick={handleLogoutClick}>LOGOUT</a>
                         </>
                     ) : (

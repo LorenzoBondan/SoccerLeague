@@ -6,6 +6,7 @@ import Home from "pages/Home";
 import Info from "pages/Info";
 import Matches from "pages/Matches";
 import Players from "pages/Players";
+import Profile from "pages/Profile";
 import Stadiums from "pages/Stadiums";
 import TeamDetails from "pages/TeamDetails";
 import Teams from "pages/Teams";
@@ -63,6 +64,12 @@ const Routes = () => {
                 <Redirect from="/admin" to="/admin/teams" exact />
                 <Route path="/admin">
                     <Admin />
+                </Route>
+
+                <Route path="/profile" exact>
+                    <div style={{display:"flex", alignItems:"center", justifyContent:"center"}}>
+                        <Profile/>
+                    </div>
                 </Route>
 
             </Switch>

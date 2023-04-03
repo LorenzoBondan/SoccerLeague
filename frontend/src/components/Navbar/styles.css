@@ -59,6 +59,17 @@ li a:hover{
     display: none;
 }
 
+.nav-login-logout button {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    color: purple;
+}
+
+.nav-login-logout a {
+    margin-right: 10px;
+}
+
 .nav-username {
     display: none;
 }
@@ -94,6 +105,9 @@ li a:hover{
 @media(min-width:992px){
     .nav-login-logout {
         margin-right: 40px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     .nav-username {

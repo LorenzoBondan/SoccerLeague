@@ -54,6 +54,13 @@ public class UserService implements UserDetailsService {
 		User entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found."));
 		return new UserDTO(entity);
 	}
+	
+	@Transactional(readOnly = true)
+	public UserDTO findByEmail(String email) {
+		Optional<User> obj = Optional.ofNullable(repository.findByEmail(email));
+		User entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not found."));
+		return new UserDTO(entity);
+	}
 
 	@Transactional
 	public UserDTO insert(UserInsertDTO dto) {
