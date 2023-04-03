@@ -92,6 +92,17 @@ const TeamDetails = () => {
                         </>
                     </div>
 
+                    {team?.rivals && (
+                        <div className='team-card-rivals-container'>
+                            <h2>Rivals</h2>
+                            <div className='team-card-rivals-images'>
+                                {team.rivals.map(rival => (
+                                    <img src={rival.imgUrl} alt="" />
+                                ))}
+                            </div>
+                        </div>
+                    )}
+
                 </div>
 
             </div>

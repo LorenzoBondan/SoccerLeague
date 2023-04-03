@@ -59,6 +59,7 @@ const TeamCard = ({team} : Props) => {
             <div className='team-card-stadium-container'>
                 <h4>Stadium: {team.stadium.name}</h4>
             </div>
+
         </div>
     );
 }

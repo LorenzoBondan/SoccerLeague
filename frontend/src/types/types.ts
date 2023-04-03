@@ -42,6 +42,8 @@ export type Team = {
     goalsScored: number;
     goalsConceded: number;
     goalDifference: number;
+
+    rivals?: Team[];
 }
 
 export type Player = {
