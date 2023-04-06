@@ -69,7 +69,7 @@ const ProfileCard = ({userEmail} : Props) => {
     }, []);
 
     const onSubmit = (formData : User) => {
-        // data: formData
+        // data: formData 
         
         page && (
             formData.name = page?.name

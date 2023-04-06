@@ -8,9 +8,8 @@ import tacaMundial from 'assets/images/taca-mundial.png';
 import tacaLibertadores from 'assets/images/taca-libertadores.png';
 import tacaBrasileirao from 'assets/images/taca-brasileirao.png';
 import tacaCopaBrasil from 'assets/images/taca-copa-brasil.png';
-
-import './styles.css';
 import StadiumMap from 'components/StadiumMap';
+import './styles.css';
 
 type UrlParams = {
     teamId: string;

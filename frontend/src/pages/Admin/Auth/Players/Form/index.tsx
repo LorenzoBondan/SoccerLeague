@@ -5,7 +5,6 @@ import { useHistory, useParams } from 'react-router-dom';
 import { requestBackend } from 'util/requests';
 import { Player, Team } from 'types/types';
 
-
 type UrlParams = {
     playerId: string;
 }
@@ -20,7 +19,6 @@ const Form = () => {
 
     const [selectTeams, setSelectTeams] = useState<Team[]>();
 
-    //trazer os teams pra povoar o combobox
     useEffect(() => {
         requestBackend({url: '/teams/a', params: {page: 0, size: 20, },})
             .then(response => {
@@ -28,7 +26,6 @@ const Form = () => {
             })
     }, []);
 
-    //carregar as textboxes com os valores do estudante a ser editado
     useEffect(() => {
         if (isEditing) {
             requestBackend({url:`/players/${playerId}`})
@@ -71,7 +68,6 @@ const Form = () => {
         ;
     };
 
-    // botão de cancelar -> reenvia o usuário para a lista de produtos, saindo do form
     const handleCancel = () => {
         history.push("/admin/players")
     }
@@ -81,7 +77,6 @@ const Form = () => {
     
     return(
         <div className="players-crud-container">
-
             <div className="base-card players-card-form-card">
                 <h1>ADD OR EDIT PLAYER</h1>
 
@@ -101,7 +96,6 @@ const Form = () => {
                                     name="name"
                                 />
                                 <div className='invalid-feedback d-block'>{errors.name?.message}</div>
-
                             </div>
                             
                             <div className='margin-bottom-30'>
@@ -116,9 +110,7 @@ const Form = () => {
                                     name="nickname"
                                 />
                                 <div className='invalid-feedback d-block'>{errors.nickname?.message}</div>
-
                             </div>
-
 
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Birth Date</label>  
@@ -132,7 +124,6 @@ const Form = () => {
                                     name="birthDate"
                                 />
                                 <div className='invalid-feedback d-block'>{errors.birthDate?.message}</div>
-
                             </div>
 
                             <div className='margin-bottom-30'>
@@ -147,9 +138,7 @@ const Form = () => {
                                     name="position"
                                 />
                                 <div className='invalid-feedback d-block'>{errors.position?.message}</div>
-
                             </div>
-
 
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Img Url</label>  
@@ -167,10 +156,7 @@ const Form = () => {
                                     name="imgUrl"
                                 />
                                 <div className='invalid-feedback d-block'>{errors.imgUrl?.message}</div>
-
                             </div>
-
-
 
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Team Id</label>  
@@ -185,9 +171,7 @@ const Form = () => {
                                     {teamsIds?.sort((a,b) => a > b ? 1 : -1).map(id => <option key={id} value={id}>{id}</option>)}
                                 </select>
                             </div>
-
                         </div>
-
                     </div>
 
                     <div className='players-crud-buttons-container'>
@@ -199,7 +183,6 @@ const Form = () => {
                         </button>
 
                         <button className='btn btn-primary text-white players-crud-buttons'>SAVE</button>
-
                     </div>
                 </form>
             </div>

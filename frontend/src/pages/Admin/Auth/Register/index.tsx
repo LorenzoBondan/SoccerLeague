@@ -2,10 +2,8 @@ import { AxiosRequestConfig } from 'axios';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { requestBackend } from 'util/requests';
-
-import './styles.css';
 import { User } from 'types/types';
-
+import './styles.css';
 
 const RegisterForm = () => {
 
@@ -31,20 +29,18 @@ const RegisterForm = () => {
             })
     };
 
-    // botão de cancelar -> reenvia o usuário para a lista de produtos, saindo do form
     const handleCancel = () => {
         history.push("/")
     }
 
     return(
-        <div className="students-crud-container">
-
-            <div className="base-card students-card-form-card">
+        <div className="register-crud-container">
+            <div className="base-card register-card-form-card">
                 <h1>REGISTER</h1>
 
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className='row students-crud-inputs-container'>
-                        <div className='col-lg-6 students-crud-inputs-left-container'>
+                    <div className='row register-crud-inputs-container'>
+                        <div className='col-lg-12 register-crud-inputs-left-container'>
 
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"black"}}>Name</label>
@@ -58,10 +54,8 @@ const RegisterForm = () => {
                                     name="name"
                                 />
                                 <div className='invalid-feedback d-block'>{errors.name?.message}</div>
-
                             </div>
 
-                            
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"black"}}>Email</label>
                                 <input 
@@ -77,9 +71,7 @@ const RegisterForm = () => {
                                     name="email"
                                 />
                                 <div className='invalid-feedback d-block'>{errors.email?.message}</div>
-
                             </div>
-
 
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"black"}}>Password</label>
@@ -94,30 +86,20 @@ const RegisterForm = () => {
                                 <div className='invalid-feedback d-block'>{errors.password?.message}</div>
 
                             </div>
-
                         </div>
 
-                        <div className='col-lg-6 students-crud-inputs-rigth-container'>
-                            <img src="" alt="" />
-                        </div>
-
-
-                        <div className='students-crud-buttons-container'>
+                        <div className='register-crud-buttons-container'>
                             <button 
-                                className='btn btn-outline-danger students-crud-buttons'
+                                className='btn btn-outline-danger register-crud-buttons'
                                 onClick={handleCancel}
                                 >
                                 CANCELAR
                             </button>
 
-                            <button className='btn btn-primary text-white students-crud-buttons'>SALVAR</button>
-
+                            <button className='btn btn-primary text-white register-crud-buttons'>SALVAR</button>
                         </div>
-
-                
                     </div>
                 </form>
-            
             </div>
         </div>
     );
