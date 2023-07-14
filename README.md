@@ -1,4 +1,4 @@
-# High School Class
+# SoccerLeague
 
 ## About the Project
 
