@@ -2,7 +2,6 @@ import { Team, User } from 'types/types';
 import { useCallback, useEffect, useState } from 'react';
 import { AxiosRequestConfig } from 'axios';
 import { requestBackend } from 'util/requests';
-
 import './styles.css';
 import { useForm } from 'react-hook-form';
 
@@ -29,8 +28,8 @@ const ProfileCard = ({userEmail} : Props) => {
       useEffect(() => {
         getUser();
       }, [getUser]);
-      //
-      const [team, setTeam] = useState<Team>();
+
+    const [team, setTeam] = useState<Team>();
 
     const getTeamById = useCallback( (id : number) => {
         const params : AxiosRequestConfig = {
@@ -43,18 +42,16 @@ const ProfileCard = ({userEmail} : Props) => {
           })
       }, [])
 
-      useEffect(() => {
+    useEffect(() => {
         page && 
          (getTeamById(page.favoriteTeamId));
-      }, [getTeamById, page]);
+    }, [getTeamById, page]);
 
-      //
+    const [showSelect, setShowSelect] = useState(false);
 
-      const [showSelect, setShowSelect] = useState(false);
+    const [selectTeams, setSelectTeams] = useState<Team[]>();
 
-      const [selectTeams, setSelectTeams] = useState<Team[]>();
-
-      const { register, handleSubmit, formState: {errors} } = useForm<User>();
+    const { register, handleSubmit, formState: {errors} } = useForm<User>();
 
     useEffect(() => {
         requestBackend({url: '/teams/a', params: {page: 0, size: 20, },})
@@ -103,11 +100,9 @@ const ProfileCard = ({userEmail} : Props) => {
             <div className='profile-card-team-container'>
                 <h2>Favorite Team</h2>
                 <img src={team?.imgUrl} alt="" />
-
                 <button onClick={() => setShowSelect(true)} className='btn btn-primary'>
                     Select another Team as favorite
                 </button>
-
                 {showSelect && 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <label htmlFor="">Choose Team</label>
@@ -121,12 +116,10 @@ const ProfileCard = ({userEmail} : Props) => {
                             >
                             {selectTeams?.sort((a,b) => a.name > b.name ? 1 : -1).map(team => <option key={team.id} value={team.id}>{team.name}</option>)}
                         </select>
-
                         <button className='btn btn-primary'>Save</button>
                     </form>
                 }
             </div>
-
         </div>
     );
 }

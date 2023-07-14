@@ -2,11 +2,9 @@
 import logoCopaDoBrasil from 'assets/images/copa-do-brasil.png';
 import logoLibertadores from 'assets/images/libertadores.png';
 import logoMundial from 'assets/images/mundial.png';
-
 import { GiBrazil } from 'react-icons/gi';
 import { GiSouthAmerica } from 'react-icons/gi';
 import { GiEarthAmerica } from 'react-icons/gi';
-
 import './styles.css';
 
 const Info = () => {
@@ -26,7 +24,6 @@ const Info = () => {
                     <img style={{opacity:"0.3"}} src="https://www.cartacapital.com.br/wp-content/uploads/2018/12/palmeiras.jpg" alt="" />
                 </div>
             </div>
-            
             <div className='even'>
                 <div className='info-card'>
                     <div className='info-card base-card'>
@@ -43,7 +40,6 @@ const Info = () => {
                     <img style={{opacity:"0.3"}} src="https://static-wp-tor15-prd.torcedores.com/wp-content/uploads/2020/04/atletico-mg_cruzeiro.jpeg" alt="" />
                 </div>
             </div>
-            
             <div className='odd'>
                 <div className='info-card'>
                     <div className='info-card base-card'>
@@ -60,7 +56,6 @@ const Info = () => {
                     <img style={{opacity:"0.3"}} src="https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt5a2fe8b1306a4572/60dc755d2446e93b5b674aa8/186d8912f9b0cc610459afb64dec436e42ec99af.jpg?auto=webp&fit=crop&format=jpg&height=800&quality=60&width=1200" alt="" />
                 </div>
             </div>
-            
             <div className='even'>
                 <div className='info-card'>
                     <div className='info-card base-card'>
@@ -77,7 +72,6 @@ const Info = () => {
                     <img style={{opacity:"0.3"}} src="http://jornalbeirario.com.br/portal/wp-content/uploads/2012/12/corinthians.jpg" alt="" />
                 </div>
             </div>
-            
         </div>
     );
 }

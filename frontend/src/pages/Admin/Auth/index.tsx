@@ -6,18 +6,14 @@ import './styles.css';
 function Auth(){
     return(
         <div className="auth-container">
-            
             <div className='auth-form-container'>
                 <Switch>
-
                     <Route path="/admin/auth/login">
                         <Login />
                     </Route>
-
                     <Route path="/admin/auth/signup">
                         <RegisterForm />
                     </Route>
-
                 </Switch>
             </div>
         </div>

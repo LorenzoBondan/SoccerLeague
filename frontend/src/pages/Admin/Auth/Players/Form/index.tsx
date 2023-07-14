@@ -46,8 +46,6 @@ const Form = () => {
     const history = useHistory();
 
     const onSubmit = (formData : Player) => {
-
-        // data: formData
         const params : AxiosRequestConfig = {
             method: isEditing? "PUT" : "POST",
             url: isEditing? `/players/${playerId}` : "/players",
@@ -59,8 +57,6 @@ const Form = () => {
         .then(response => {
             console.log('SUCCESS', response.data);
             history.push("/admin/players");
-
-            /*toast.success('Student cadastrado com sucesso!');*/
         })
         .catch(() => {
             console.log('error');
@@ -74,16 +70,13 @@ const Form = () => {
 
     const teamsIds = selectTeams?.map(team => team.id)
 
-    
     return(
         <div className="players-crud-container">
             <div className="base-card players-card-form-card">
                 <h1>ADD OR EDIT PLAYER</h1>
-
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='row players-crud-inputs-container'>
                         <div className='col-lg-6 players-crud-inputs-left-container'>
-
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Name</label>  
                                 <input 
@@ -97,7 +90,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.name?.message}</div>
                             </div>
-                            
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Nickname</label>  
                                 <input 
@@ -111,7 +103,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.nickname?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Birth Date</label>  
                                 <input 
@@ -125,7 +116,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.birthDate?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Position</label>  
                                 <input 
@@ -139,7 +129,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.position?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Img Url</label>  
                                 <input 
@@ -157,7 +146,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.imgUrl?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Team Id</label>  
                                 <select
@@ -173,7 +161,6 @@ const Form = () => {
                             </div>
                         </div>
                     </div>
-
                     <div className='players-crud-buttons-container'>
                         <button 
                             className='btn btn-outline-danger players-crud-buttons'
@@ -186,7 +173,6 @@ const Form = () => {
                     </div>
                 </form>
             </div>
-            
         </div>
     );
 }

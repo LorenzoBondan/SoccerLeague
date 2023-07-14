@@ -1,11 +1,8 @@
-
-
 import ProfileCard from 'components/ProfileCard';
 import './styles.css';
 import { useContext, useEffect } from 'react';
 import { AuthContext } from 'AuthContext';
 import { getTokenData, isAuthenticated } from 'util/auth';
-
 
 const Profile = () => {
 

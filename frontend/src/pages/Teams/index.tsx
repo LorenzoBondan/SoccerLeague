@@ -31,7 +31,6 @@ const Teams = () => {
     return(
         <div className="teams-container">
             <h1>Teams</h1>
-
             <div className="row">
                 {page?.content
                   .sort((a,b) => a.name > b.name ? 1 : -1)

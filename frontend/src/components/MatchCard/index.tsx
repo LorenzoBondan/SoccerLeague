@@ -6,7 +6,7 @@ import { requestBackend } from 'util/requests';
 import './styles.css';
 
 type Props = {
-    match: Match;
+  match: Match;
 }
 
 const MatchCard = ({match}: Props) => {
@@ -26,26 +26,23 @@ const MatchCard = ({match}: Props) => {
           })
         }, [])
 
+    const getAwayTeamById = useCallback( (id : number) => {
+      const params : AxiosRequestConfig = {
+        method:"GET",
+        url: `/teams/team/${id}`
+      }
       
+      requestBackend(params) 
+        .then(response => {
+          setAwayTeam(response.data);
+        })
+      }, [])
   
-      useEffect(() => {
-        getHomeTeamById(match.homeTeamId);
-        getAwayTeamById(match.awayTeamId);
-      }, []);
+    useEffect(() => {
+      getHomeTeamById(match.homeTeamId);
+      getAwayTeamById(match.awayTeamId);
+    }, [getHomeTeamById, getAwayTeamById, match]);
       
-
-      const getAwayTeamById = useCallback( (id : number) => {
-        const params : AxiosRequestConfig = {
-          method:"GET",
-          url: `/teams/team/${id}`
-        }
-    
-        requestBackend(params) 
-          .then(response => {
-            setAwayTeam(response.data);
-          })
-        }, [])
-
     return(
         <div className='match-card-container'>
             <div className='match-card-content-container'>

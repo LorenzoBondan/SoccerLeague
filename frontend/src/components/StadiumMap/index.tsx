@@ -1,5 +1,4 @@
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
-
 import './styles.css';
 
 type Props = {

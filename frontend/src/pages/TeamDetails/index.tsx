@@ -47,24 +47,18 @@ const TeamDetails = () => {
 
     return(
         <div className="team-details-container">
-
             <div className='team-details-info'>
-
                 <div className='team-details-logo'>
                     <img src={team?.imgUrl} alt="" />
                     <h1>{team?.name}</h1>
                 </div>
-
                 <div className='team-details-content'>
-
                     <div className='team-details-serie'>
                         <h2 style={{display:"flex", flexDirection:"row"}}>Serie: <p style={{color:"white", marginLeft:"10px", textTransform:"uppercase"}}>{team?.serie}</p></h2>
                     </div>
-
                     <div className='team-details-members' >
                         <h2 style={{display:"flex", flexDirection:"row"}}>Members: <p style={{color:"white", marginLeft:"10px"}}>{team?.members}</p></h2>
                     </div>
-
                     <div className='team-details-cups'>
                         <>
                         <h2>Titles</h2>
@@ -90,7 +84,6 @@ const TeamDetails = () => {
                         </div>
                         </>
                     </div>
-
                     {team?.rivals && (
                         <div className='team-card-rivals-container'>
                             <h2>Rivals</h2>
@@ -101,11 +94,8 @@ const TeamDetails = () => {
                             </div>
                         </div>
                     )}
-
                 </div>
-
             </div>
-
             <div className='team-details-stadium'>
                <div className='team-details-stadium-image'>
                     <h3>{team?.stadium.name}</h3>
@@ -118,9 +108,7 @@ const TeamDetails = () => {
                         <StadiumMap lat={team?.stadium.latitude} lng={team?.stadium.longitude} location={team.stadium.location}/>
                     )}
                </div>
-
             </div>
-            
             <div className='row team-details-players'>
                 <h2>Players</h2>
                 {team?.players.map(player => (

@@ -25,7 +25,6 @@ const PlacingTable = ({onUpdate} : any) => {
         getTeams();
       }, [getTeams]);
 
-
       const placingColor = (number : number) => {
         
         let positionColor;
@@ -61,7 +60,6 @@ const PlacingTable = ({onUpdate} : any) => {
                     <th>Goal Difference</th>
                 </tr>
             </thead>
-
             <tbody>
                 {page?.content.map((team, index) => (
                     <tr key={team.id}>

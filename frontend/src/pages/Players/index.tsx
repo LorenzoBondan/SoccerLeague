@@ -31,11 +31,9 @@ const Players = () => {
         getPlayers();
       }, [getPlayers]);
 
-
     return(
         <div className="players-container">
             <h1>All Players</h1>
-
             <div className="row">
                 {page?.content
                   .sort((a,b) => a.name > b.name ? 1 : -1)

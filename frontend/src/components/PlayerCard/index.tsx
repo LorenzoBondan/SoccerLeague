@@ -52,7 +52,6 @@ const PlayerCard = ({player} : Props) => {
         getTeamById(player.teamId);
       }, [getTeamById, player.teamId]);
 
-
     return(
         <div className='player-card-container'>
             <div className='player-card-image-container'>
@@ -62,11 +61,9 @@ const PlayerCard = ({player} : Props) => {
                 </Link>
             </div>
             <div className='player-card-content-container'>
-                <>
                 <h3>{player.nickname}</h3>
                 <p>Birth Date: {player.birthDate.substring(0,10)}</p>
                 {positionColor(player.position)}
-                </>
             </div>
         </div>
     );

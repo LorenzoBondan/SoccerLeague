@@ -1,10 +1,8 @@
-
 import { Team } from 'types/types';
 import tacaMundial from 'assets/images/taca-mundial.png';
 import tacaLibertadores from 'assets/images/taca-libertadores.png';
 import tacaBrasileirao from 'assets/images/taca-brasileirao.png';
 import tacaCopaBrasil from 'assets/images/taca-copa-brasil.png';
-
 import './styles.css';
 
 type Props = {
@@ -59,7 +57,6 @@ const TeamCard = ({team} : Props) => {
             <div className='team-card-stadium-container'>
                 <h4>Stadium: {team.stadium.name}</h4>
             </div>
-
         </div>
     );
 }

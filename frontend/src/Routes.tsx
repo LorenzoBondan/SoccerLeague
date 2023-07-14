@@ -11,11 +11,9 @@ import Stadiums from "pages/Stadiums";
 import TeamDetails from "pages/TeamDetails";
 import Teams from "pages/Teams";
 import { Redirect, Route, Router, Switch } from "react-router-dom";
-
 import history from "util/history";
 
 const Routes = () => {
-
     return(
         <Router history={history}> 
             <Navbar/>

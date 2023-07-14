@@ -1,4 +1,3 @@
-
 import { AxiosRequestConfig } from 'axios';
 import StadiumCard from 'components/StadiumCard';
 import { useCallback, useEffect, useState } from 'react';
@@ -16,7 +15,7 @@ const Stadiums = () => {
           url: "/stadiums"
         }
     
-        requestBackend(params) // função criada no requests.ts
+        requestBackend(params)
           .then(response => {
             setPage(response.data);
             window.scrollTo(0, 0);
@@ -30,7 +29,6 @@ const Stadiums = () => {
     return(
         <div className='stadiums-container'>
             <h1>Stadiums</h1>
-
             <div className="row">
                 {page?.content
                   .sort((a,b) => a.capacity < b.capacity ? 1 : -1)

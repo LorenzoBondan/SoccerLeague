@@ -16,7 +16,6 @@ const Form = () => {
 
     const { register, handleSubmit, formState: {errors}, setValue } = useForm<Team>();
 
-    //carregar as textboxes com os valores do estudante a ser editado
     useEffect(() => {
 
             requestBackend({url:`/teams/team/${teamId}`})
@@ -48,7 +47,6 @@ const Form = () => {
 
     const onSubmit = (formData : Team) => {
 
-        // data: formData
         const params : AxiosRequestConfig = {
             method: "PUT",
             url: `/teams/team/${teamId}`,
@@ -66,21 +64,17 @@ const Form = () => {
         });
     };
 
-    // botão de cancelar -> reenvia o usuário para a lista de produtos, saindo do form
     const handleCancel = () => {
         history.push("/admin/teams")
     }
 
     return(
         <div className="teams-crud-container">
-
             <div className="base-card teams-card-form-card">
                 <h1>EDIT TEAMS</h1>
-
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className='row teams-crud-inputs-container'>
                         <div className='col-lg-6 teams-crud-inputs-left-container'>
-
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Name</label>                          
                                 <input 
@@ -94,7 +88,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.name?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Serie</label>                          
                                 <input 
@@ -108,7 +101,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.serie?.message}</div>
                             </div>
-                            
                             <div className='margin-bottom-30'>    
                                 <label htmlFor="" style={{color:"white"}}>Members</label>                       
                                 <input 
@@ -122,7 +114,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.members?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>International Cups</label>                          
                                 <input 
@@ -136,7 +127,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.internationalCups?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'>   
                                 <label htmlFor="" style={{color:"white"}}>Continental Cups</label>                          
                                 <input 
@@ -150,7 +140,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.continentalCups?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'> 
                                 <label htmlFor="" style={{color:"white"}}>National Leagues</label>                          
                                 <input 
@@ -164,7 +153,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.nationalLeagues?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'>   
                                 <label htmlFor="" style={{color:"white"}}>National Cups</label>                           
                                 <input 
@@ -178,7 +166,6 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.nationalCups?.message}</div>
                             </div>
-
                             <div className='margin-bottom-30'> 
                                 <label htmlFor="" style={{color:"white"}}>URL of Team's image</label>                                
                                 <input 
@@ -196,11 +183,8 @@ const Form = () => {
                                 />
                                 <div className='invalid-feedback d-block'>{errors.imgUrl?.message}</div>
                             </div>
-
                         </div>
-
                         <div className='col-lg-6'>
-
                             <div className='margin-bottom-30'> 
                                 <label htmlFor="" style={{color:"white"}}>Points</label>                        
                                 <input 
@@ -212,7 +196,6 @@ const Form = () => {
                                     name="points"
                                 />
                             </div>
-
                             <div className='margin-bottom-30'>  
                                 <label htmlFor="" style={{color:"white"}}>Games</label>                               
                                 <input 
@@ -224,7 +207,6 @@ const Form = () => {
                                     name="games"
                                 />
                             </div>
-
                             <div className='margin-bottom-30'> 
                                 <label htmlFor="" style={{color:"white"}}>Victories</label>                             
                                 <input 
@@ -236,7 +218,6 @@ const Form = () => {
                                     name="victories"
                                 />
                             </div>
-
                             <div className='margin-bottom-30'> 
                                 <label htmlFor="" style={{color:"white"}}>Draws</label>                           
                                 <input 
@@ -248,7 +229,6 @@ const Form = () => {
                                     name="draws"
                                 />
                             </div>
-
                             <div className='margin-bottom-30'>   
                                 <label htmlFor="" style={{color:"white"}}>Defeats</label>                           
                                 <input 
@@ -260,7 +240,6 @@ const Form = () => {
                                     name="defeats"
                                 />
                             </div>
-
                             <div className='margin-bottom-30'> 
                                 <label htmlFor="" style={{color:"white"}}>Goals Scored</label>                                 
                                 <input 
@@ -272,7 +251,6 @@ const Form = () => {
                                     name="goalsScored"
                                 />
                             </div>
-
                             <div className='margin-bottom-30'>
                                 <label htmlFor="" style={{color:"white"}}>Goals Conceded</label> 
                                 <input 
@@ -284,10 +262,8 @@ const Form = () => {
                                     name="goalsConceded"
                                 />
                             </div>
-
                         </div>
                     </div>
-
                     <div className='teams-crud-buttons-container'>
                         <button 
                             className='btn btn-outline-danger teams-crud-buttons'
@@ -295,13 +271,10 @@ const Form = () => {
                             >
                             CANCEL
                         </button>
-
                         <button className='btn btn-primary text-white teams-crud-buttons'>SAVE</button>
-
                     </div>
                 </form>
             </div>
-            
         </div>
     );
 }

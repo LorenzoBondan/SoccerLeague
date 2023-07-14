@@ -3,7 +3,6 @@ import { AxiosRequestConfig } from 'axios';
 import { useCallback, useEffect, useState } from 'react';
 import { requestBackend } from 'util/requests';
 import { Player, SpringPage } from 'types/types';
-
 import './styles.css';
 import PlayerCrudCard from '../PlayerCrudCard';
 import { Link } from 'react-router-dom';
@@ -30,7 +29,6 @@ const List = () => {
   useEffect(() => {
     getPlayers();
   }, [getPlayers]);
-
 
   return (
     <div className='players-crud-container'>
