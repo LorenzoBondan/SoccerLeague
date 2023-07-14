@@ -20,19 +20,16 @@ const ProfileCard = ({userEmail} : Props) => {
           url: `/users/email/${userEmail}`,
           withCredentials:true
         }
-    
         requestBackend(params) 
           .then(response => {
             setPage(response.data);
           })
       }, [userEmail])
-  
+
       useEffect(() => {
         getUser();
       }, [getUser]);
-
       //
-
       const [team, setTeam] = useState<Team>();
 
     const getTeamById = useCallback( (id : number) => {
@@ -40,13 +37,12 @@ const ProfileCard = ({userEmail} : Props) => {
           method:"GET",
           url: `/teams/team/${id}`
         }
-    
         requestBackend(params) 
           .then(response => {
             setTeam(response.data);
           })
       }, [])
-  
+
       useEffect(() => {
         page && 
          (getTeamById(page.favoriteTeamId));
@@ -60,17 +56,14 @@ const ProfileCard = ({userEmail} : Props) => {
 
       const { register, handleSubmit, formState: {errors} } = useForm<User>();
 
-    //trazer os teams pra povoar o combobox
     useEffect(() => {
         requestBackend({url: '/teams/a', params: {page: 0, size: 20, },})
             .then(response => {
                 setSelectTeams(response.data.content)
             })
     }, []);
-
+    
     const onSubmit = (formData : User) => {
-        // data: formData 
-        
         page && (
             formData.name = page?.name
         );

@@ -7,7 +7,7 @@ This is a summary and a simulator of the brazillian soccer league
 ## Layout desktop
 
 #### Home page
-![Captura de tela 2023-04-20 150146](https://user-images.githubusercontent.com/105743965/233456316-fae04928-53bf-426e-9ecf-3c7ce7308dc6.png)
+![Captura de tela 2023-04-20 150146](https://user-images.githubusercontent.com/105743965/233791700-2fc0d1e8-5224-482c-ba43-3b6021b12a7e.png)
 #### Teams page
 ![Captura de tela 2023-04-20 150244](https://user-images.githubusercontent.com/105743965/233456462-49c3db10-cab4-4073-ba15-5305622518e8.png)
 #### Team details page
@@ -23,11 +23,9 @@ This is a summary and a simulator of the brazillian soccer league
 #### User profile page
 ![Captura de tela 2023-04-20 150353](https://user-images.githubusercontent.com/105743965/233457331-69136d99-f39b-40eb-93e2-ee0172fead3d.png)
 
-
 ## Class Diagram
 
 ![asta](https://user-images.githubusercontent.com/105743965/233456170-f1a07d6f-7891-4875-af3f-85b87a6cbac7.png)
-
 
 ## Used technologies
 
@@ -39,6 +37,7 @@ This is a summary and a simulator of the brazillian soccer league
 - React
 - CSS
 
+Spring Boot v4.15.3 | Node v14.18.2
 
 ## Author
 
