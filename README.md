@@ -50,8 +50,6 @@ This is a summary and a simulator of the brazillian soccer league
 - React
 - CSS
 
-Spring Boot v4.15.3 | Node v14.18.2
-
 ## Author
 
 [Lorenzo Bondan](HTTPS://WWW.LINKEDIN.COM/IN/LORENZO-BONDAN-108B42236)
